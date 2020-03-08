@@ -27,10 +27,6 @@
 
 <body>
 	
-
-
-
-
 <nav class="navbar sticky-top navbar-expand-lg bg-light">
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsiblenav" aria-controls="collapsiblenav" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon">
@@ -44,8 +40,11 @@
 				<a class="nav-link" href="https://carolinacamassa.tech">
 					hello</a>
 			</span>
-			<a class="nav-item nav-link" href=https://carolinacamassa.tech/blog/>
-			<img class = "emoji"src="https://img.icons8.com/color/48/000000/pencil-tip.png">blog</a>
+			<span class="nav-item">
+				<span class="nav-item">
+			<img class = "emoji"src="https://img.icons8.com/color/48/000000/pencil-tip.png">
+			<a class="nav-link" href=https://carolinacamassa.tech/blog/>Blog</a>
+			</span>
 			<span class="nav-item">
 				<img class="emoji" src="https://carolinacamassa.tech/blog/icons/linkedin.png">
 				<a class="nav-link" href="https://www.linkedin.com/in/carolinacamassa/" target="_blank">linkedin</a>
@@ -55,7 +54,7 @@
 
 	</div>
 	<a class="nav navbar-nav ml-auto" href='#'>
-		<img class = "star" src="https://carolinacamassa.tech/blog/icons/icon2.png" style ="max-height:40px;">
+		<img class="star" src="https://carolinacamassa.tech/blog/icons/icon2.png" style="max-height:40px;">
 	</a>
 
 </nav>
@@ -379,7 +378,6 @@ features <span style="color:#ff79c6">=</span> [<span style="color:#f1fa8c">&#39;
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">@app.route(<span style="color:#f1fa8c">&#34;/&#34;</span>, methods<span style="color:#ff79c6">=</span>[<span style="color:#f1fa8c">&#39;POST&#39;</span>, <span style="color:#f1fa8c">&#39;GET&#39;</span>])
@@ -390,7 +388,6 @@ features <span style="color:#ff79c6">=</span> [<span style="color:#f1fa8c">&#39;
         x_user <span style="color:#ff79c6">=</span> pd<span style="color:#ff79c6">.</span>DataFrame([[form<span style="color:#ff79c6">.</span>p_radius<span style="color:#ff79c6">.</span>data, form<span style="color:#ff79c6">.</span>p_mass<span style="color:#ff79c6">.</span>data,
           form<span style="color:#ff79c6">.</span>p_distance<span style="color:#ff79c6">.</span>data, form<span style="color:#ff79c6">.</span>s_radius<span style="color:#ff79c6">.</span>data,
           form<span style="color:#ff79c6">.</span>s_mag<span style="color:#ff79c6">.</span>data]], columns <span style="color:#ff79c6">=</span> features)
-
         score <span style="color:#ff79c6">=</span> rforest<span style="color:#ff79c6">.</span>predict(x_user[features])
         probs <span style="color:#ff79c6">=</span>  rforest<span style="color:#ff79c6">.</span>predict_proba(x_user[features])
         <span style="color:#6272a4"># Probability according to the model that the planet belongs to the predicted class</span>
