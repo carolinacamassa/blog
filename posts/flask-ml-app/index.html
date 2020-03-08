@@ -378,6 +378,7 @@ features <span style="color:#ff79c6">=</span> [<span style="color:#f1fa8c">&#39;
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">@app.route(<span style="color:#f1fa8c">&#34;/&#34;</span>, methods<span style="color:#ff79c6">=</span>[<span style="color:#f1fa8c">&#39;POST&#39;</span>, <span style="color:#f1fa8c">&#39;GET&#39;</span>])
@@ -385,12 +386,13 @@ features <span style="color:#ff79c6">=</span> [<span style="color:#f1fa8c">&#39;
     <span style="color:#ff79c6">global</span> score
     form <span style="color:#ff79c6">=</span> InputForm()
     <span style="color:#ff79c6">if</span> form<span style="color:#ff79c6">.</span>validate_on_submit():
-        x_user <span style="color:#ff79c6">=</span> pd<span style="color:#ff79c6">.</span>DataFrame([[form<span style="color:#ff79c6">.</span>p_radius<span style="color:#ff79c6">.</span>data, form<span style="color:#ff79c6">.</span>p_mass<span style="color:#ff79c6">.</span>data,form<span style="color:#ff79c6">.</span>p_distance<span style="color:#ff79c6">.</span>data,form<span style="color:#ff79c6">.</span>s_radius<span style="color:#ff79c6">.</span>data,form<span style="color:#ff79c6">.</span>s_mag<span style="color:#ff79c6">.</span>data]], columns <span style="color:#ff79c6">=</span> features)
+        x_user <span style="color:#ff79c6">=</span> pd<span style="color:#ff79c6">.</span>DataFrame([[form<span style="color:#ff79c6">.</span>p_radius<span style="color:#ff79c6">.</span>data, form<span style="color:#ff79c6">.</span>p_mass<span style="color:#ff79c6">.</span>data,
+          form<span style="color:#ff79c6">.</span>p_distance<span style="color:#ff79c6">.</span>data, form<span style="color:#ff79c6">.</span>s_radius<span style="color:#ff79c6">.</span>data,
+          form<span style="color:#ff79c6">.</span>s_mag<span style="color:#ff79c6">.</span>data]], columns <span style="color:#ff79c6">=</span> features)
 
         score <span style="color:#ff79c6">=</span> rforest<span style="color:#ff79c6">.</span>predict(x_user[features])
         probs <span style="color:#ff79c6">=</span>  rforest<span style="color:#ff79c6">.</span>predict_proba(x_user[features])
-        <span style="color:#6272a4"># Probability according to the model</span>
-        <span style="color:#6272a4"># that the planet belongs to the predicted class</span>
+        <span style="color:#6272a4"># Probability according to the model that the planet belongs to the predicted class</span>
         probability <span style="color:#ff79c6">=</span> np<span style="color:#ff79c6">.</span>max(probs)<span style="color:#ff79c6">*</span><span style="color:#bd93f9">100</span>
     <span style="color:#ff79c6">return</span> render_template(<span style="color:#f1fa8c">&#39;index.html&#39;</span>, form<span style="color:#ff79c6">=</span>form, prob <span style="color:#ff79c6">=</span> probability, hab_score <span style="color:#ff79c6">=</span> score[<span style="color:#bd93f9">0</span>])</code></pre></td></tr></table>
 </div>
