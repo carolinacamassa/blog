@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://carolinacamassa.tech/blog/</loc>
+    <lastmod>2020-03-08T20:08:02+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://carolinacamassa.tech/blog/posts/flask-ml-app/</loc>
+    <lastmod>2020-03-08T20:08:02+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://carolinacamassa.tech/blog/tags/flask/</loc>
+    <lastmod>2020-03-08T20:08:02+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://carolinacamassa.tech/blog/tags/machine-learning/</loc>
+    <lastmod>2020-03-08T20:08:02+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://carolinacamassa.tech/blog/posts/</loc>
+    <lastmod>2020-03-08T20:08:02+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://carolinacamassa.tech/blog/tags/</loc>
+    <lastmod>2020-03-08T20:08:02+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://carolinacamassa.tech/blog/tags/tutorial/</loc>
+    <lastmod>2020-03-08T20:08:02+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://carolinacamassa.tech/blog/tags/web-dev/</loc>
+    <lastmod>2020-03-08T20:08:02+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://carolinacamassa.tech/blog/ideas/series-ml-production/</loc>
+  </url>
+  
+  <url>
+    <loc>https://carolinacamassa.tech/blog/ideas/</loc>
+  </url>
+  
+</urlset>

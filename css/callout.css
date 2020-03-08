@@ -1,0 +1,15 @@
+p.callout{
+  padding:20px;
+  margin:15px;
+}
+
+p.callout.info{
+  background-color: #def4ff;
+  border-left: solid 2px #288ba8;
+
+}
+
+p.callout.warning{
+  background-color:#fedbdb;
+  border-left: solid 2px #91162a;
+}

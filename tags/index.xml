@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Carolina Camassa</title>
+    <link>https://carolinacamassa.tech/blog/tags/</link>
+    <description>Recent content in Tags on Carolina Camassa</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Carolina Camassa</copyright>
+    <lastBuildDate>Sun, 08 Mar 2020 20:08:02 +0530</lastBuildDate>
+    
+	<atom:link href="https://carolinacamassa.tech/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>flask</title>
+      <link>https://carolinacamassa.tech/blog/tags/flask/</link>
+      <pubDate>Sun, 08 Mar 2020 20:08:02 +0530</pubDate>
+      
+      <guid>https://carolinacamassa.tech/blog/tags/flask/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>machine learning</title>
+      <link>https://carolinacamassa.tech/blog/tags/machine-learning/</link>
+      <pubDate>Sun, 08 Mar 2020 20:08:02 +0530</pubDate>
+      
+      <guid>https://carolinacamassa.tech/blog/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tutorial</title>
+      <link>https://carolinacamassa.tech/blog/tags/tutorial/</link>
+      <pubDate>Sun, 08 Mar 2020 20:08:02 +0530</pubDate>
+      
+      <guid>https://carolinacamassa.tech/blog/tags/tutorial/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web dev</title>
+      <link>https://carolinacamassa.tech/blog/tags/web-dev/</link>
+      <pubDate>Sun, 08 Mar 2020 20:08:02 +0530</pubDate>
+      
+      <guid>https://carolinacamassa.tech/blog/tags/web-dev/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

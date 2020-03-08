@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>flask on Carolina Camassa</title>
+    <link>https://carolinacamassa.tech/blog/tags/flask/</link>
+    <description>Recent content in flask on Carolina Camassa</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Carolina Camassa</copyright>
+    <lastBuildDate>Sun, 08 Mar 2020 20:08:02 +0530</lastBuildDate>
+    
+	<atom:link href="https://carolinacamassa.tech/blog/tags/flask/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Creating an interactive Flask app for exoplanet classification</title>
+      <link>https://carolinacamassa.tech/blog/posts/flask-ml-app/</link>
+      <pubDate>Sun, 08 Mar 2020 20:08:02 +0530</pubDate>
+      
+      <guid>https://carolinacamassa.tech/blog/posts/flask-ml-app/</guid>
+      <description>I&amp;rsquo;ve recently stumbled upon this interesting dataset about exoplanets, planets outside our galaxy. There is a lot of ongoing research on this topic, and scientists are making hypothesis on which - if any - of these planets could be considered habitable from the information we&amp;rsquo;ve gathered about them.</description>
+    </item>
+    
+  </channel>
+</rss>

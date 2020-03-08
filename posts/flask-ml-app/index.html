@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Creating an interactive Flask app for exoplanet classification - Carolina Camassa</title><link rel="icon" type="image/png" href=icons/icon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Creating an interactive Flask app for exoplanet classification" />
+<meta property="og:description" content="How to connect a machine learning model to a Flask app to make predictions based on the user&#39;s input." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://carolinacamassa.tech/blog/posts/flask-ml-app/" />
+<meta property="article:published_time" content="2020-03-08T20:08:02+05:30" />
+<meta property="article:modified_time" content="2020-03-08T20:08:02+05:30" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Creating an interactive Flask app for exoplanet classification"/>
+<meta name="twitter:description" content="How to connect a machine learning model to a Flask app to make predictions based on the user&#39;s input."/>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Mono&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,500,500i&display=swap" rel="stylesheet">
+	
+	<script src="https://kit.fontawesome.com/b6729e5506.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" media="screen" href="https://carolinacamassa.tech/blog/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://carolinacamassa.tech/blog/css/main.min.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="https://carolinacamassa.tech/blog/js/main.js"></script>
+</head>
+
+<body>
+	
+
+
+
+
+<nav class="navbar sticky-top navbar-expand-lg bg-light">
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsiblenav" aria-controls="collapsiblenav" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon">
+			<i class="fas fa-bars" style="color:grey; font-size:28px;"></i>
+		</span>
+	</button>
+	<div class="collapse navbar-collapse body-text" id="collapsiblenav">
+		<div class="navbar-nav">
+			<span class="nav-item">
+				<img class="emoji" src="https://img.icons8.com/ultraviolet/40/000000/bright-moon.png">
+				<a class="nav-link" href="https://carolinacamassa.tech">
+					hello</a>
+			</span>
+			
+			<span class="nav-item">
+				<img class="emoji" src="https://carolinacamassa.tech/blog/icons/linkedin.png">
+				<a class="nav-link" href="https://www.linkedin.com/in/carolinacamassa/" target="_blank">linkedin</a>
+			</span>
+			
+		</div>
+
+	</div>
+	<a class="nav navbar-nav ml-auto" href='#'>
+		<img class = "star" src="https://carolinacamassa.tech/blog/icons/icon2.png" style ="max-height:40px;">
+	</a>
+
+</nav>
+
+	<div class=" container wrapper">
+		
+<div class="header">
+	
+	<h1 class="site-title">Carolina Camassa</h1>
+	<div class="site-description"><p>Junior Data Engineer @ Quantyca</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://www.linkedin.com/in/carolinacamassa/" title="LinkedIn"><i data-feather="linkedin"></i></a></li><li><a href="https://github.com/carolinacamassa" title="Github"><i data-feather="github"></i></a></li></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/blog/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/blog/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/blog/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header-single">
+				
+				<div class="date-long">
+						
+						<span>8 Mar 2020</span>
+				</div>
+					
+				<div class="matter">
+					<h2 class="title">Creating an interactive Flask app for exoplanet classification</h2>
+				</div>
+
+			</div>
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<span class = "tags"><a href="/blog/tags/tutorial">tutorial</a></span>
+							
+							<span class = "tags"><a href="/blog/tags/flask">flask</a></span>
+							
+							<span class = "tags"><a href="/blog/tags/web-dev">web dev</a></span>
+							
+							<span class = "tags"><a href="/blog/tags/machine-learning">machine learning</a></span>
+							
+						</ul>
+					
+				
+			</div>
+
+			<div >
+				<h4>Table of Contents</h4>
+				<nav id="TableOfContents">
+  <ul>
+    <li><a href="#about-the-data">About the data</a></li>
+    <li><a href="#getting-started-with-the-app">Getting started with the app</a></li>
+    <li><a href="#setting-up-the-form">Setting up the form</a></li>
+    <li><a href="#the-front-end">The Front-end</a></li>
+    <li><a href="#integrating-the-model">Integrating the model</a></li>
+    <li><a href="#putting-it-all-together">Putting it all together</a></li>
+  </ul>
+</nav>
+				<p>I&rsquo;ve recently stumbled upon this interesting <a href="http://phl.upr.edu/projects/habitable-exoplanets-catalog/data/database">dataset</a> about <strong>exoplanets</strong>, planets outside our galaxy. There is a lot of ongoing research on this topic, and scientists are making hypothesis on which - if any - of these planets could be considered habitable from the information we&rsquo;ve gathered about them.
+I was looking for a small side project to learn how to use the Flask microframework, so I decided to build an app that integrates a machine learning model trained on this data.</p>
+<p>This is how the app looks:</p>
+<p><img src="https://carolinacamassa.tech/blog/uploads/exoplanetapp-screen.png" alt=""></p>
+<p>The user can change the input values with the sliders, and the displayed number is updated in real time. By clicking the <em>submit</em> button, the data is sent to the app who then feeds it into a pre-trained machine learning model. The model outputs a prediction on the habitability score of the planet, and the score is then displayed on the screen.</p>
+<p>You can find the repo for this tutorial <a href="https://github.com/carolinacamassa/exoplanet-model-app">here</a>.
+This isn&rsquo;t meant to be an introduction to Flask, so I will give for granted some basic concepts like routes and templates. If these words don&rsquo;t ring a bell for you, I recommend reading <a href="https://hackersandslackers.com/your-first-flask-application">this guide</a> first.</p>
+<h4 id="about-the-data">About the data</h4>
+<p>Both the dataset and the information on the habitability criteria can be found <a href="http://phl.upr.edu/projects/habitable-exoplanets-catalog/data/database">here</a>
+The exoplanets in the catalogue are given one out of three possible scores:</p>
+<ul>
+<li>0: not habitable</li>
+<li>1: optimistically habitable</li>
+<li>2: conservatively habitable</li>
+</ul>
+<p class = "callout warning">In the dataset, the scores 1 and 2 are actually switched. I decided to change their order during pre-processing of the data because I wanted the three classes to be ordered in the most logical way, i.e. from least to most habitable. </p>
+<p>I want to emphasize two things before moving on to the code.</p>
+<p>First, the machine learning model was not the focus of the project, so I spent very little time on it; the goal was simply to build something that could output a prediction, regardless on how reliable that prediction was. So, don&rsquo;t use the notebook as an example of good data exploration and model training.</p>
+<p>Secondly, this app was made for fun. It&rsquo;s not meant to have any scientific value despite relying on astrophysical data. This might sound obvious, but you can never be too careful 👀</p>
+<h4 id="getting-started-with-the-app">Getting started with the app</h4>
+<p>To see the app in action, you first have to clone the <a href="https://github.com/carolinacamassa/exoplanet-model-app">repository</a> to your machine. Once you&rsquo;ve done that, you can see the project&rsquo;s structure:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">/exoplanet-model-app
+   |-- app
+   |   |-- model
+   |   |-- static
+   |   |-- template
+   |   |-- app.py
+   |-- venv
+</code></pre></td></tr></table>
+</div>
+</div><p>If you don&rsquo;t have it, you can install it by running <code>pip install virtualenv</code> in the command line. Alternatively, you can create and manage virtual environments using <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">conda</a>.</p>
+<p>All the packages used in the app are included in the <code>requirements.txt</code> file, which makes it easy to install them in the virtual environment. Once you are in the repository folder, you can run the following commands:
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#6272a4">#Create the virtual environment</span>
+<span style="color:#8be9fd;font-style:italic">cd</span> exoplanet-model-app
+virtualenv env
+
+<span style="color:#6272a4"># Activate the environment</span>
+venv<span style="color:#f1fa8c">\S</span>cripts<span style="color:#f1fa8c">\a</span>ctivate.bat
+
+<span style="color:#6272a4"># Install the requirements</span>
+<span style="color:#8be9fd;font-style:italic">cd</span> app
+pip install -r requirements.txt</code></pre></td></tr></table>
+</div>
+</div></p>
+<p>Now you should already be able to run the app on your local development server.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;font-style:italic">set</span> <span style="color:#8be9fd;font-style:italic">FLASK_APP</span> <span style="color:#ff79c6">=</span> app.py
+<span style="color:#8be9fd;font-style:italic">set</span> <span style="color:#8be9fd;font-style:italic">FLASK_DEBUG</span> <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span> <span style="color:#6272a4">#running the</span>
+
+flask run
+ * Running on http://127.0.0.1:5000/</code></pre></td></tr></table>
+</div>
+</div>
+<p>Since we&rsquo;ve set the <em>FLASK_DEBUG</em> variable to 1, the content of the page will automatically reload every time you modify the contents of the app, which is very useful during development.
+Now that you&rsquo;ve tried the app, let&rsquo;s find out what actually goes on under the hood.</p>
+<p class = "callout info">The command line code I included works on Windows, but the Linux/Mac alternatives can be easily found on Google.</p>
+<h4 id="setting-up-the-form">Setting up the form</h4>
+<p>Dealing with forms can be a headache, but luckily the <a href="https://flask-wtf.readthedocs.io/en/stable/">Flask-WTF</a> library makes everything much more manageable. It&rsquo;s an integration of WTForms into Flask that simplifies the process of form creation, validation and submission.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">from</span> flask_wtf <span style="color:#ff79c6">import</span> FlaskForm
+<span style="color:#ff79c6">from</span> flask_wtf.csrf <span style="color:#ff79c6">import</span> CSRFProtect
+<span style="color:#ff79c6">from</span> wtforms.fields.html5 <span style="color:#ff79c6">import</span> DecimalRangeField
+<span style="color:#ff79c6">from</span> wtforms.fields <span style="color:#ff79c6">import</span> SubmitField</code></pre></td></tr></table>
+</div>
+</div>
+<p>In WTForms, the fields in a form need to be declared inside the form&rsquo;s class. This is how the InputForm is defined in our app:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#6272a4"># form to collect user input:</span>
+<span style="color:#ff79c6">class</span> <span style="color:#50fa7b">InputForm</span>(FlaskForm):
+    default_val <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">10</span>, <span style="color:#bd93f9">1</span>,<span style="color:#bd93f9">0.1</span>,<span style="color:#bd93f9">1</span>,<span style="color:#bd93f9">5</span>]
+    p_radius <span style="color:#ff79c6">=</span> DecimalRangeField(<span style="color:#f1fa8c">&#39;Radius&#39;</span>, default <span style="color:#ff79c6">=</span>  default_val[<span style="color:#bd93f9">0</span>] )
+    p_mass <span style="color:#ff79c6">=</span> DecimalRangeField(<span style="color:#f1fa8c">&#39;Mass&#39;</span>, default <span style="color:#ff79c6">=</span> default_val[<span style="color:#bd93f9">1</span>] )
+    p_distance <span style="color:#ff79c6">=</span> DecimalRangeField(<span style="color:#f1fa8c">&#39;Effective th. distance from star&#39;</span>,
+    default <span style="color:#ff79c6">=</span> default_val[<span style="color:#bd93f9">2</span>]  )
+    s_radius <span style="color:#ff79c6">=</span> DecimalRangeField(<span style="color:#f1fa8c">&#39;Radius&#39;</span>,default <span style="color:#ff79c6">=</span>  default_val[<span style="color:#bd93f9">3</span>] )
+    s_mag <span style="color:#ff79c6">=</span> DecimalRangeField(<span style="color:#f1fa8c">&#39;Magnitude&#39;</span>,default <span style="color:#ff79c6">=</span>  default_val[<span style="color:#bd93f9">4</span>]  )
+    submit <span style="color:#ff79c6">=</span> SubmitField(<span style="color:#f1fa8c">&#39;Submit&#39;</span>)</code></pre></td></tr></table>
+</div>
+</div>
+<p>It&rsquo;s important to include a Submit field that the user can click to actually transmit the input.
+For our form we&rsquo;re using the <em>DecimalRange</em> field, which is derived from the HTML5 range type input. You will see soon how easy processing and displaying the form&rsquo;s data is.</p>
+<h4 id="the-front-end">The Front-end</h4>
+<p>At the moment we&rsquo;re missing the interface the user will interact with when loading the app. I&rsquo;ve created a simple index.html template, adding some CSS to make it sleeker. I&rsquo;ve used two CSS frameworks to speed up the design part: <a href="https://materializecss.com/">Materialize</a> (mostly because it makes the sliders look very nice) and <a href="http://tachyons.io/">Tachyons</a>.</p>
+<p>Here is how a single input field looks in HTML:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#6272a4">&lt;!-- Javascript function to update the displayed value when the user moves a slider --&gt;</span>
+&lt;<span style="color:#ff79c6">script</span>&gt;
+  <span style="color:#8be9fd;font-style:italic">function</span> outputUpdate(val, id) {
+  <span style="color:#8be9fd;font-style:italic">document</span>.querySelector(<span style="color:#f1fa8c">&#39;#val_&#39;</span> <span style="color:#ff79c6">+</span> id).innerHTML <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">parseFloat</span>(val).toFixed(<span style="color:#bd93f9">2</span>);
+    }
+  &lt;/<span style="color:#ff79c6">script</span>&gt;
+
+ <span style="color:#6272a4">&lt;!-- A single form element--&gt;</span>
+&lt;<span style="color:#ff79c6">p</span>&gt;
+  &lt;<span style="color:#ff79c6">span</span>&gt;Planet mass&lt;/<span style="color:#ff79c6">span</span>&gt;&lt;<span style="color:#ff79c6">span</span>&gt;(earth masses)&lt;/<span style="color:#ff79c6">span</span>&gt;
+&lt;/<span style="color:#ff79c6">p</span>&gt;
+&lt;<span style="color:#ff79c6">p</span>&gt;
+  &lt;<span style="color:#ff79c6">span</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;slider&#34;</span>&gt;{{ form.p_mass(min=0.5, max=30,
+            oninput=&#34;outputUpdate(p_mass.value, p_mass.name)&#34;) }}&lt;/<span style="color:#ff79c6">span</span>&gt;
+  &lt;<span style="color:#ff79c6">span</span> <span style="color:#50fa7b">id</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;val_p_mass&#34;</span>&gt;{{ &#34;%.2f&#34;|format(form.p_mass.data)}}&lt;/<span style="color:#ff79c6">span</span>&gt;
+&lt;/<span style="color:#ff79c6">p</span>&gt;</code></pre></td></tr></table>
+</div>
+</div>
+<p>When the page is loaded, each input slider can take two values, depending on what&rsquo;s stored in the <em>data</em> property of the field. If the page is loaded for the first time, it will be the default value defined in the form class. If the page is reloading after a form submission, it will be the last submitted value. In other words, each field retains the last value it held before submission.</p>
+<p>When the user moves the sliders, the numerical value displayed next to them is updated to match the slider&rsquo;s position. This real-time update is possible through the Javascript function <em>outputUpdate</em>.</p>
+<p><img src="https://carolinacamassa.tech/blog/uploads/exoplanet-video-slider.gif" alt=""></p>
+<p>What I find cool is how little code you need to make this work. Just a few lines of HTML for each input field, and a one-line Javascript function.</p>
+<p class = "callout info">
+You'll notice that the habitability prediction isn't updated every time an input value is changed, but only when the user decides to submit the data.  
+This makes the implementation easier, but if you're looking for some Flask practice you can try to add real-time predictions.
+</p>
+<h4 id="integrating-the-model">Integrating the model</h4>
+<p>Until now our app hasn&rsquo;t been connected to the model in any way; the sliders work and the user can click the Submit button, but the habitability score stays the same.
+How can we actually make the trained model available to the app to make its predictions? The answer is <em>serialization</em>.</p>
+<blockquote>
+<p>Serialization refers to the process of <strong>converting an object in memory to a byte stream</strong> that can be stored on disk or sent over a network. Later on, this character stream can then be retrieved and de-serialized back to a Python object.</p>
+</blockquote>
+<p>Using a Python library called <a href="https://joblib.readthedocs.io/en/latest/persistence.html">joblib</a>, we can save the model on disk from the Jupyter notebook, with the <code>joblib.dump</code> function. <a href="https://docs.python.org/3/library/pickle.html">pickle</a> is another popular choice that offers the same functionality.</p>
+<p>In the app&rsquo;s code, we can then call <code>joblib.load</code> to un-serialize the model and store it in a variable, ready for use. This needs to be done at startup time, so I added the @before_first_request decorator.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#6272a4"># model imports  </span>
+<span style="color:#ff79c6">import</span> pandas <span style="color:#ff79c6">as</span> pd
+<span style="color:#ff79c6">import</span> numpy <span style="color:#ff79c6">as</span> np
+<span style="color:#ff79c6">import</span> sklearn
+<span style="color:#ff79c6">from</span> joblib <span style="color:#ff79c6">import</span> load
+
+<span style="color:#6272a4"># This code loads the model when the app starts</span>
+@app.before_first_request
+<span style="color:#ff79c6">def</span> <span style="color:#50fa7b">startup</span>():
+    <span style="color:#ff79c6">global</span> rforest
+    rforest <span style="color:#ff79c6">=</span> load(<span style="color:#f1fa8c">&#34;model/model.joblib&#34;</span>)
+
+<span style="color:#6272a4"># model related variables</span>
+features <span style="color:#ff79c6">=</span> [<span style="color:#f1fa8c">&#39;P_RADIUS_EST&#39;</span>,<span style="color:#f1fa8c">&#39;P_MASS_EST&#39;</span>,<span style="color:#f1fa8c">&#39;P_DISTANCE_EFF&#39;</span>,<span style="color:#f1fa8c">&#39;S_RADIUS_EST&#39;</span>,<span style="color:#f1fa8c">&#39;S_MAG&#39;</span>]</code></pre></td></tr></table>
+</div>
+</div>
+<p>This is all we need for now to have the model ready to work. As you can see, it&rsquo;s pretty straightforward. What&rsquo;s left is actually tying together the two sides of the app we&rsquo;ve worked on - the user input and the prediction.</p>
+<h4 id="putting-it-all-together">Putting it all together</h4>
+<p>Flask uses <em>routes</em> to decide which <em>views</em> to serve to the user.
+<em>Routes</em> can be defined as URL patterns of an app (like <code>myapp.com/home</code> or <code>myapp.com/about</code>).<br>
+<em>Views</em> refer to the content to be served at these URLs, in our case the index page containing the right habitability prediction for the user&rsquo;s input.</p>
+<p>We only need one route for our application, because we only have one page. Here is the back-end code that makes it work:
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">@app.route(<span style="color:#f1fa8c">&#34;/&#34;</span>, methods<span style="color:#ff79c6">=</span>[<span style="color:#f1fa8c">&#39;POST&#39;</span>, <span style="color:#f1fa8c">&#39;GET&#39;</span>])
+<span style="color:#ff79c6">def</span> <span style="color:#50fa7b">index</span>():
+    <span style="color:#ff79c6">global</span> score
+    form <span style="color:#ff79c6">=</span> InputForm()
+    <span style="color:#ff79c6">if</span> form<span style="color:#ff79c6">.</span>validate_on_submit():
+        x_user <span style="color:#ff79c6">=</span> pd<span style="color:#ff79c6">.</span>DataFrame([[form<span style="color:#ff79c6">.</span>p_radius<span style="color:#ff79c6">.</span>data, form<span style="color:#ff79c6">.</span>p_mass<span style="color:#ff79c6">.</span>data,form<span style="color:#ff79c6">.</span>p_distance<span style="color:#ff79c6">.</span>data,form<span style="color:#ff79c6">.</span>s_radius<span style="color:#ff79c6">.</span>data,form<span style="color:#ff79c6">.</span>s_mag<span style="color:#ff79c6">.</span>data]], columns <span style="color:#ff79c6">=</span> features)
+
+        score <span style="color:#ff79c6">=</span> rforest<span style="color:#ff79c6">.</span>predict(x_user[features])
+        probs <span style="color:#ff79c6">=</span>  rforest<span style="color:#ff79c6">.</span>predict_proba(x_user[features])
+        <span style="color:#6272a4"># Probability according to the model</span>
+        <span style="color:#6272a4"># that the planet belongs to the predicted class</span>
+        probability <span style="color:#ff79c6">=</span> np<span style="color:#ff79c6">.</span>max(probs)<span style="color:#ff79c6">*</span><span style="color:#bd93f9">100</span>
+    <span style="color:#ff79c6">return</span> render_template(<span style="color:#f1fa8c">&#39;index.html&#39;</span>, form<span style="color:#ff79c6">=</span>form, prob <span style="color:#ff79c6">=</span> probability, hab_score <span style="color:#ff79c6">=</span> score[<span style="color:#bd93f9">0</span>])</code></pre></td></tr></table>
+</div>
+</div></p>
+<p>Let&rsquo;s break it down:</p>
+<ul>
+<li>The <strong>route</strong> tells the app what to do when the user visits the index page. Since data needs to be exchanged both ways, the app can accept both <em>POST</em> and <em>GET</em> request methods.</li>
+<li>The planet habitability label is stored in the global variable <strong>score</strong>, which is set to 0 at startup. We need to declare it again inside the app route to be able to update it.</li>
+<li>A new <strong>form</strong> instance is created from the InputForm class that we defined earlier. This object is going to be passed to the <em>render_template</em> function.</li>
+<li>Using the <strong>validate_on_submit</strong>() method, we tell the app what to do once the form is submitted: the form values are used to create a Pandas Series that the model can use as input to predict the score.</li>
+<li>The last line of the route tells the app to <strong>render the index template</strong>, passing along the form contents and the habitability score.</li>
+</ul>
+<p>The reason why this works is that every time the user clicks Submit, the page is refreshed and <em>render_template()</em> is called again with the updated values. In the meantime, the form object keeps stored the data from the last iteration, until new data is transmitted.</p>
+<p><img src="https://carolinacamassa.tech/blog/uploads/Exoplanet-app.png" alt=""></p>
+<p>I hope you learned something useful from this guide. If you&rsquo;re looking for some practice, here are a few ideas on how to modify or extend the app:</p>
+<ul>
+<li>Experiment with different types of form input fields <em>(e.g. dropdowns, text input)</em></li>
+<li>Upgrade to real time prediction, removing the need for the Submit button</li>
+<li>Allow the user to control some model hyperparameter, like the number of estimators in a tree, or the model itself (Hint: serialize and import different models)</li>
+</ul>
+<p>Let me know in the comments if you tried any of these approaches!</p>
+<p>Until next time,
+<em>Carolina</em></p>
+
+			</div>
+
+
+			<div class="addthis_inline_share_toolbox"></div>
+
+			<br>
+			<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "carolinac" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+			
+		</div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Carolina Camassa |  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e5a2f4cf30bc5d4"></script>
+<script>feather.replace()</script>
+</body>
+</html>
