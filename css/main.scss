@@ -1,15 +1,13 @@
 @import "webfonts.css";
-@import "callout.css";
-
-/* General properties */
+@import "callout.css"; /* General properties */
 $primary: #44775d;
 $bodytext: black;
 $bg: #ffdad5ba;
 $accent: #ec8c8c;
 $mainfont: 'IA_Quattro', sans-serif;
 $bodyfont: 'Roboto', sans-serif;
-$monospace: Fira Mono, monospace;
-/* NAVBAR */
+$monospace: Fira Mono, monospace; /* NAVBAR */
+
 .navbar-nav {
   background-color: #f8f9fb;
   margin-left: 35px;
@@ -53,6 +51,7 @@ $monospace: Fira Mono, monospace;
   //margin:0
 }
 // BODY
+
 body {
   font-family: $mainfont;
   line-height: 1.8em;
@@ -354,13 +353,12 @@ ul {
   display: flex;
 }
 
-
-
 .date-long {
   font-style: italic;
   font-size: 1em;
-  margin-bottom:20px;
+  margin-bottom: 20px;
 }
+
 .post-header .meta .date {
   margin-right: 30px;
   width: 64px;
@@ -379,10 +377,9 @@ ul {
 }
 
 .post-header .meta .date .rest {
-    display: block;
-    font-size: 0.75em;
+  display: block;
+  font-size: 0.75em;
 }
-
 
 .post-header-single h2.title {
   margin: -10px 0 0;
@@ -391,16 +388,16 @@ ul {
 
 .post .title.small {
   margin: 0 0 10px;
+  font-size: 1rem;
 
   a {
     padding-bottom: 1.3px;
     color: black;
     border-bottom: 1px solid $accent;
+    transition: background 80ms;
   }
 
-  a:hover {
-    color: gray;
-  }
+  a:hover {}
 }
 
 .post .post-header-single {
