@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Carolina Camassa</copyright>
-    <lastBuildDate>Sun, 08 Mar 2020 20:08:02 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 14 Mar 2020 09:32:02 +0530</lastBuildDate>
     
 	<atom:link href="https://carolinacamassa.tech/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>A curated list of data learning resources for the quarantine</title>
+      <link>https://carolinacamassa.tech/blog/posts/free-data-resources/</link>
+      <pubDate>Sat, 14 Mar 2020 09:32:02 +0530</pubDate>
+      
+      <guid>https://carolinacamassa.tech/blog/posts/free-data-resources/</guid>
+      <description>It&amp;rsquo;s March 14th 2020, and this week my country has come to a stop to because of the Covid-19 virus outbreak.</description>
+    </item>
     
     <item>
       <title>Creating an interactive Flask app for exoplanet classification</title>

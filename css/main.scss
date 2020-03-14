@@ -4,6 +4,7 @@ $primary: #44775d;
 $bodytext: black;
 $bg: #ffdad5ba;
 $accent: #ec8c8c;
+$links: #3700ff;
 $mainfont: 'IA_Quattro', sans-serif;
 $bodyfont: 'Roboto', sans-serif;
 $monospace: Fira Mono, monospace; /* NAVBAR */
@@ -80,13 +81,13 @@ textarea {
 }
 
 ::-moz-selection {
-  background: #3700ff;
+  background: $links;
   text-shadow: none;
   color: #fff;
 }
 
 ::selection {
-  background: #3700ff;
+  background: $links;
   text-shadow: none;
   color: #fff;
 }
@@ -310,7 +311,9 @@ ul {
 }
 
 .header .nav.social a:hover {
-  color: #3700ff;
+  color: $links;
+  text-decoration: none;
+  border-bottom: none;
 }
 
 .header .site-description .nav {
@@ -347,6 +350,10 @@ ul {
 
 .post p {
   margin: 2em 0;
+}
+
+.post a{
+  color: $links;
 }
 
 .post-header {
@@ -416,10 +423,10 @@ ul {
 .post .tags a,
 .tag-cloud a {
   display: inline-block;
-  border: 1px solid #3700ff;
+  border: 1px solid $links;
   border-radius: 3px;
   padding: 0 6px;
-  color: #3700ff;
+  color: $links;
   line-height: 20px;
   font-size: 0.85em;
   text-decoration: none;
@@ -445,7 +452,7 @@ ul {
 }
 
 .footer a:hover {
-  color: #3700ff;
+  color:$links;
 }
 
 .tag-cloud {

@@ -3,8 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://carolinacamassa.tech/blog/posts/free-data-resources/</loc>
+    <lastmod>2020-03-14T09:32:02+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://carolinacamassa.tech/blog/</loc>
-    <lastmod>2020-03-08T20:08:02+05:30</lastmod>
+    <lastmod>2020-03-14T09:32:02+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://carolinacamassa.tech/blog/posts/</loc>
+    <lastmod>2020-03-14T09:32:02+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://carolinacamassa.tech/blog/tags/resources/</loc>
+    <lastmod>2020-03-14T09:32:02+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://carolinacamassa.tech/blog/tags/</loc>
+    <lastmod>2020-03-14T09:32:02+05:30</lastmod>
   </url>
   
   <url>
@@ -19,16 +39,6 @@
   
   <url>
     <loc>https://carolinacamassa.tech/blog/tags/machine-learning/</loc>
-    <lastmod>2020-03-08T20:08:02+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://carolinacamassa.tech/blog/posts/</loc>
-    <lastmod>2020-03-08T20:08:02+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://carolinacamassa.tech/blog/tags/</loc>
     <lastmod>2020-03-08T20:08:02+05:30</lastmod>
   </url>
   
