@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Carolina Camassa</copyright>
-    <lastBuildDate>Sat, 14 Mar 2020 09:32:02 +0530</lastBuildDate>
+    <lastBuildDate>Tue, 31 Mar 2020 22:10:02 +0530</lastBuildDate>
     
 	<atom:link href="https://carolinacamassa.tech/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Why you should stop writing on Medium already</title>
+      <link>https://carolinacamassa.tech/blog/posts/static-web-blog/</link>
+      <pubDate>Tue, 31 Mar 2020 22:10:02 +0530</pubDate>
+      
+      <guid>https://carolinacamassa.tech/blog/posts/static-web-blog/</guid>
+      <description>I read articles on Medium almost every day. I owe a lot ok my personal knowledge to that platform, but here&amp;rsquo;s what I think: If you know how to program, even just a little, and you write semi-regularly on Medium, you should stop doing that and open your own blog instead.</description>
+    </item>
     
     <item>
       <title>A curated list of data learning resources for the quarantine</title>

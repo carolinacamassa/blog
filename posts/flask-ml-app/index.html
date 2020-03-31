@@ -128,7 +128,7 @@
 				<p>I&rsquo;ve recently stumbled upon this interesting <a href="http://phl.upr.edu/projects/habitable-exoplanets-catalog/data/database">dataset</a> about <strong>exoplanets</strong>, planets outside our galaxy. There is a lot of ongoing research on this topic, and scientists are making hypothesis on which - if any - of these planets could be considered habitable from the information we&rsquo;ve gathered about them.
 I was looking for a small side project to learn how to use the Flask microframework, so I decided to build an app that integrates a machine learning model trained on this data.</p>
 <p>This is how the app looks:</p>
-<p><img src="https://carolinacamassa.tech/blog/uploads/exoplanetapp-screen.png" alt=""></p>
+<p><img src="/blog/uploads/exoplanetapp-screen.png" alt=""></p>
 <p>The user can change the input values with the sliders, and the displayed number is updated in real time. By clicking the <em>submit</em> button, the data is sent to the app who then feeds it into a pre-trained machine learning model. The model outputs a prediction on the habitability score of the planet, and the score is then displayed on the screen.</p>
 <p>You can find the repo for this tutorial <a href="https://github.com/carolinacamassa/exoplanet-model-app">here</a>.
 This isn&rsquo;t meant to be an introduction to Flask, so I will give for granted some basic concepts like routes and templates. If these words don&rsquo;t ring a bell for you, I recommend reading <a href="https://hackersandslackers.com/your-first-flask-application">this guide</a> first.</p>
@@ -303,7 +303,7 @@ For our form we&rsquo;re using the <em>DecimalRange</em> field, which is derived
 </div>
 <p>When the page is loaded, each input slider can take two values, depending on what&rsquo;s stored in the <em>data</em> property of the field. If the page is loaded for the first time, it will be the default value defined in the form class. If the page is reloading after a form submission, it will be the last submitted value. In other words, each field retains the last value it held before submission.</p>
 <p>When the user moves the sliders, the numerical value displayed next to them is updated to match the slider&rsquo;s position. This real-time update is possible through the Javascript function <em>outputUpdate</em>.</p>
-<p><img src="https://carolinacamassa.tech/blog/uploads/exoplanet-video-slider.gif" alt=""></p>
+<p><img src="/blog/uploads/exoplanet-video-slider.gif" alt=""></p>
 <p>What I find cool is how little code you need to make this work. Just a few lines of HTML for each input field, and a one-line Javascript function.</p>
 <p class = "callout info">
 You'll notice that the habitability prediction isn't updated every time an input value is changed, but only when the user decides to submit the data.  
