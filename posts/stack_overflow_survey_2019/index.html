@@ -584,7 +584,7 @@ plt<span style="color:#ff79c6">.</span>xlabel(<span style="color:#f1fa8c">&#39;#
 remote_cat <span style="color:#ff79c6">=</span> [<span style="color:#f1fa8c">&#39;Never&#39;</span>, <span style="color:#f1fa8c">&#39;Part-time remote&#39;</span>, <span style="color:#f1fa8c">&#39;Full-time remote&#39;</span>]
 survey_dev <span style="color:#ff79c6">=</span> survey_dev<span style="color:#ff79c6">.</span>assign(Remote<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;Never&#39;</span>)
 
-full_time <span style="color:#ff79c6">=</span> (survey_dev[<span style="color:#f1fa8c">&#39;WorkRemote&#39;</span>]<span style="color:#ff79c6">.</span>str<span style="color:#ff79c6">.</span>contains(<span style="color:#f1fa8c">&#39;all or almost&#39;</span>))
+full_time <span style="color:#ff79c6">=</span> (survey_dev[<span style="color:#f1fa8c">&#39;WorkRemote&#39;</span>]<span style="color:#ff79c6">.</span>str<span style="color:#ff79c6">.</span>contains(<span style="color:#f1fa8c">&#39;All or almost&#39;</span>))
 part_time <span style="color:#ff79c6">=</span> ( (survey_dev[<span style="color:#f1fa8c">&#39;WorkRemote&#39;</span>]<span style="color:#ff79c6">.</span>str<span style="color:#ff79c6">.</span>contains(<span style="color:#f1fa8c">&#39;week&#39;</span>))
           <span style="color:#ff79c6">|</span> (survey_dev[<span style="color:#f1fa8c">&#39;WorkRemote&#39;</span>]<span style="color:#ff79c6">.</span>str<span style="color:#ff79c6">.</span>contains(<span style="color:#f1fa8c">&#39;half&#39;</span>))
              <span style="color:#ff79c6">|</span> (survey_dev[<span style="color:#f1fa8c">&#39;WorkRemote&#39;</span>]<span style="color:#ff79c6">.</span>str<span style="color:#ff79c6">.</span>contains(<span style="color:#f1fa8c">&#39;few&#39;</span>)) )
@@ -595,12 +595,12 @@ survey_dev[<span style="color:#f1fa8c">&#39;Remote&#39;</span>] <span style="col
 survey_dev[<span style="color:#f1fa8c">&#39;Remote&#39;</span>]<span style="color:#ff79c6">.</span>value_counts()
 </code></pre></td></tr></table>
 </div>
-</div><pre><code>Never               36682
+</div><pre><code>Never               29305
 Part-time remote    23823
-Full-time remote      868
+Full-time remote      8245
 Name: Remote, dtype: int64
 </code></pre>
-<p>Full-time remote developers are really rare, as I expected. Let&rsquo;s see if we can detect some satisfaction pattern.</p>
+<p>Full-time remote developers are quite rare, as I expected, but we still have a decent sample. Let&rsquo;s see if we can detect some satisfaction pattern.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -630,7 +630,7 @@ plt<span style="color:#ff79c6">.</span>title(<span style="color:#f1fa8c">&#39;Jo
 </code></pre></td></tr></table>
 </div>
 </div><p><img src="/blog/uploads/stack_overflow//stack_overflow_survey_2019_63_0.png" alt="png"></p>
-<p>Now, as I mentioned before, <strong>full-time remote developers</strong> make up a tiny part of our dataset, so we don&rsquo;t know if it&rsquo;s a representative sample. However, the data we do have tells that these workers are <strong>much less satisfied</strong> than average, while developers who <em>sometimes</em> work remotely are about 5% more satisfied.</p>
+<p>The data we have on fully remote workers seems to say they are <strong>much less satisfied</strong> than average, while developers who <em>sometimes</em> work remotely are about 5% more satisfied.</p>
 <p>It might be interesting to compare these findings to those reported in Buffer&rsquo;s latest<a href="https://lp.buffer.com/state-of-remote-work-2020" title="https://lp.buffer.com/state-of-remote-work-2020"> State of Remote Work</a> survey. Their survey was mostly focused on remote workers, so their insights are probably more reliable.</p>
 <h5 id="competence-at-work">Competence at work</h5>
 <p>We still haven&rsquo;t talked about the <em>ImpSyn</em> column, which contains the answer to the question:</p>
@@ -719,7 +719,7 @@ mgn_percentage <span style="color:#ff79c6">=</span> np<span style="color:#ff79c6
 <p><strong>- Age group:</strong> developers over 40 years old reported a higher satisfaction rate then their younger counterparts. In turn, this can be related to competence and salary, since both usually grow with age.</p>
 <p>- <strong>Perceived competence:</strong> there&rsquo;s an evident positive correlation between feeling competent at work and feeling satisfied with a job. It&rsquo;s no surprise that people enjoy themselves more when they are working on something they&rsquo;re good at, but it was nice to see it show so clearly in the data</p>
 <p>- <strong>Compensation:</strong> job satisfaction clearly increased with compensation, with developers paid below average wages being the least satisfied group.</p>
-<p>- <strong>Remote work:</strong> the happiest group was the one that is allowed to work remotely for some time. People working remotely all the time were much less satisfied. Problems like isolation, disorganization and burnout are common among fully remote workers, and they might be the cause for this. Still, our sample of remote workers was a bit small.</p>
+<p>- <strong>Remote work:</strong> the happiest group was the one that is allowed to work remotely for some time. People working remotely all the time were much less satisfied. Problems like isolation, disorganization and burnout are common among fully remote workers, and they might be the cause for this</p>
 <p>The Stack Overflow survey offers a lot of exciting possibilities for analysis, so I&rsquo;d like to <em>thank them</em> for making the data available.
 <br>
 An idea could be to apply some clustering algorithms to identify different &ldquo;types&rdquo; of developers. And since the data is available starting from 2011, you could also look at how the responses have changed over time. I&rsquo;m sure there are many more ways to approach this dataset.</p>
