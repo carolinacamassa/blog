@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>What makes developers satisfied with their jobs? - Carolina Camassa - - Junior Data Engineer @ Quantyca </title>
+		<meta name = "author" content = "Carolina Camassa"/><link rel="icon" type="image/png" href=https://carolinacamassa.tech/blog/icons/icon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="What makes developers satisfied with their jobs?" />
+<meta property="og:description" content="An analysis of Stack Overflow&#39;s 2019 developer report." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://carolinacamassa.tech/blog/posts/stack_overflow_survey_2019/" />
+<meta property="og:image" content="https://carolinacamassa.tech/blog/uploads/stack_overflow/stack_overflow_survey_2019_71_0.png" />
+<meta property="article:published_time" content="2020-04-20T20:32:02+05:30" />
+<meta property="article:modified_time" content="2020-04-20T20:32:02+05:30" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://carolinacamassa.tech/blog/uploads/stack_overflow/stack_overflow_survey_2019_71_0.png"/>
+
+<meta name="twitter:title" content="What makes developers satisfied with their jobs?"/>
+<meta name="twitter:description" content="An analysis of Stack Overflow&#39;s 2019 developer report."/>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Mono&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,500,500i&display=swap" rel="stylesheet">
+	
+	<script src="https://kit.fontawesome.com/b6729e5506.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" media="screen" href="https://carolinacamassa.tech/blog/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://carolinacamassa.tech/blog/css/main.min.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="https://carolinacamassa.tech/blog/js/main.js"></script>
+</head>
+
+<body>
+	
+<nav class="navbar sticky-top navbar-expand-lg bg-light">
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsiblenav" aria-controls="collapsiblenav" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon">
+			<i class="fas fa-bars" style="color:grey; font-size:28px;"></i>
+		</span>
+	</button>
+	<div class="collapse navbar-collapse body-text" id="collapsiblenav">
+		<div class="navbar-nav">
+			<span class="nav-item">
+				<img class="emoji" src="https://img.icons8.com/ultraviolet/40/000000/bright-moon.png">
+				<a class="nav-link" href="https://carolinacamassa.tech">
+					hello</a>
+			</span>
+			<span class="nav-item">
+			<img class = "emoji"src="https://img.icons8.com/color/48/000000/pencil-tip.png">
+			<a class="nav-link" href=https://carolinacamassa.tech/blog/>blog</a>
+			</span>
+			<span class="nav-item">
+				<img class="emoji" src="https://carolinacamassa.tech/blog/icons/linkedin.png">
+				<a class="nav-link" href="https://www.linkedin.com/in/carolinacamassa/" target="_blank">linkedin</a>
+			</span>
+			
+		</div>
+
+	</div>
+	<a class="nav navbar-nav ml-auto" href='#'>
+		<img class="star" src="https://carolinacamassa.tech/blog/icons/icon.png" style="max-height:40px;">
+	</a>
+
+</nav>
+
+	<div class=" container wrapper">
+		
+<div class="header">
+	
+	<h1 class="site-title">Carolina Camassa</h1>
+	<div class="site-description"><p>Junior Data Engineer @ Quantyca</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://www.linkedin.com/in/carolinacamassa/" title="LinkedIn"><i data-feather="linkedin"></i></a></li><li><a href="https://github.com/carolinacamassa" title="Github"><i data-feather="github"></i></a></li></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/blog/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/blog/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/blog/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header-single">
+				
+				<div class="date-long">
+						
+						<span>20 Apr 2020</span>
+				</div>
+					
+				<div class="matter">
+					<h2 class="title">What makes developers satisfied with their jobs?</h2>
+				</div>
+
+			</div>
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<span class = "tags"><a href="/blog/tags/data-science">data science</a></span>
+							
+							<span class = "tags"><a href="/blog/tags/tutorial">tutorial</a></span>
+							
+						</ul>
+					
+				
+			</div>
+
+			<div >
+				<h4>Table of Contents</h4>
+				<nav id="TableOfContents">
+  <ul>
+    <li><a href="#importing-data-and-preliminary-analysis">Importing data and preliminary analysis</a>
+      <ul>
+        <li><a href="#selecting-data-of-interest">Selecting data of interest</a></li>
+      </ul>
+    </li>
+    <li><a href="#exploratory-data-analysis">Exploratory data analysis</a>
+      <ul>
+        <li><a href="#demographics">Demographics</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#work-related">Work-related</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusions">Conclusions</a></li>
+  </ul>
+</nav>
+				<p>Every year since 2011, Stack Overflow has conducted a <a href="https://insights.stackoverflow.com/survey">survey</a> to ask developers a variety of question about what it&rsquo;s like to work as a developer. The questions cover a lot of ground: demographic information, learning goals, values, and opinions. The main insights from the last published edition of the survey can be found <a href="https://insights.stackoverflow.com/survey/2019">here</a>.
+<br>
+Since it&rsquo;s such a long survey, there are different types of information that can be extracted from it, and the link I provided doesn&rsquo;t cover all the possibilities. I was curious in particular about <em>job and career satisfaction</em> among developers, and the factors that influence it.</p>
+<p>The survey includes two separate columns for Career Satisfaction  and Job Satisfaction. I&rsquo;ve decided to focus on analyzing on <strong>job satisfaction</strong> out of the two, because I think that a lot of the interesting variables in the dataset, like the organization size and the opportunity for remote work, are related to a single job rather than a career.
+<br>
+This notebook will try to find the answer to different questions, such as:</p>
+<ul>
+<li>
+<p>Are developers happier at larger or smaller organizations?</p>
+</li>
+<li>
+<p>Are men (or women) developers more likely to be satisfied with their job?</p>
+</li>
+<li>
+<p>How does compensation correlate to job satisfaction?</p>
+</li>
+</ul>
+<p class = "callout info">I've removed a lot of the original code cells to make the article shorter and focus on the analysis, you can see the full notebook <a href ="https://nbviewer.jupyter.org/github/carolinacamassa/data-science-notebooks/blob/master/stackoverflow-survey/stack_overflow_survey_2019.ipynb">here</a>.</p>
+<h3 id="importing-data-and-preliminary-analysis">Importing data and preliminary analysis</h3>
+<p>The original dataset contains 85 columns, mostly categorical. Since my goal is to only investigate job satisfaction, I think that only some of the original 85 columns are actually relevant to our analysis.To avoid cluttering the notebook, I&rsquo;ve already excluded the features that I don&rsquo;t find useful, such as the developer&rsquo;s learning goals for 2020 and their experience with StackOverflow.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">survey_raw <span style="color:#ff79c6">=</span> pd<span style="color:#ff79c6">.</span>read_csv(<span style="color:#f1fa8c">&#34;data/survey_results_public_reduced.csv&#34;</span>, header <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>, sep <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;;&#39;</span>, encoding <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;ISO 8859-1&#39;</span>)
+</code></pre></td></tr></table>
+</div>
+</div><p>Let&rsquo;s take a look at the <strong>23 columns</strong> we have available.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">print</span>(survey_raw<span style="color:#ff79c6">.</span>columns)
+<span style="color:#ff79c6">print</span>(survey_raw<span style="color:#ff79c6">.</span>info(verbose <span style="color:#ff79c6">=</span> False))
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>Index(['MainBranch', 'Hobbyist', 'OpenSourcer', 'Employment', 'Country',
+       'EdLevel', 'UndergradMajor', 'EduOther', 'OrgSize', 'DevType',
+       'YearsCode', 'YearsCodePro', 'CareerSat', 'JobSat', 'MgrWant',
+       'ConvertedComp', 'WorkWeekHrs', 'WorkPlan', 'WorkChallenge',
+       'WorkRemote', 'ImpSyn', 'Age', 'Gender'],
+      dtype='object')
+RangeIndex: 88883 entries, 0 to 88882
+Columns: 23 entries, MainBranch to Gender
+dtypes: float64(3), object(20)
+</code></pre>
+<p>As we can see, the dataset contains almost 90000 answers to the survey. However, <strong>not all survey takers were developers</strong>: the dataset also includes student, ex-devs and other categories. To figure out how many of these answers are from working developers, we can look at the <em>MainBranch</em> column.</p>
+<h4 id="selecting-data-of-interest">Selecting data of interest</h4>
+<p>I will remove from the dataset:</p>
+<ul>
+<li>
+<p>People who are not currently developers (e.g. student, ex developers)</p>
+</li>
+<li>
+<p>Part-time developers</p>
+</li>
+<li>
+<p>Answers from developer with less than 1 year of coding experience</p>
+</li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#6272a4"># only prof. developers</span>
+survey_dev <span style="color:#ff79c6">=</span> survey_raw[(survey_raw[<span style="color:#f1fa8c">&#39;MainBranch&#39;</span>] <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;I am a developer by profession&#39;</span>)]
+
+<span style="color:#6272a4"># exclude part time</span>
+survey_dev <span style="color:#ff79c6">=</span> survey_dev[(survey_dev[<span style="color:#f1fa8c">&#39;Employment&#39;</span>] <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;Employed full-time&#39;</span>)
+<span style="color:#ff79c6">|</span> (survey_dev[<span style="color:#f1fa8c">&#39;Employment&#39;</span>] <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;Independent contractor, freelancer, or self-employed&#39;</span>) ]
+
+<span style="color:#6272a4"># exclude less than 1 year coding</span>
+survey_dev <span style="color:#ff79c6">=</span> survey_dev[(survey_dev[<span style="color:#f1fa8c">&#39;YearsCodePro&#39;</span>] <span style="color:#ff79c6">!=</span> <span style="color:#f1fa8c">&#39;Less than 1 year&#39;</span>) <span style="color:#ff79c6">|</span> (survey_dev[<span style="color:#f1fa8c">&#39;YearsCode&#39;</span>] <span style="color:#ff79c6">!=</span> <span style="color:#f1fa8c">&#39;Less than 1 year&#39;</span>) ]
+<span style="color:#ff79c6">print</span>(<span style="color:#8be9fd;font-style:italic">len</span>(survey_dev))
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>61373
+</code></pre>
+<p>We&rsquo;re down to about <strong>60000 rows</strong>. Also, since Job Satisfaction is out target variable, it&rsquo;s best to drop the rows for which it&rsquo;s null - they&rsquo;re just a few hundred.</p>
+<h3 id="exploratory-data-analysis">Exploratory data analysis</h3>
+<p>First of all, I&rsquo;d like to know the distribution of our target variable - <strong>Job Satisfaction</strong>. Even though I&rsquo;ve decided not to further investigate <strong>Career Satisfaction</strong> , I&rsquo;m still curious to see how it&rsquo;s distributed as well and how it compares to job satisfaction.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sns<span style="color:#ff79c6">.</span>countplot(y<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;Satisfaction level&#34;</span>, hue<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;Type&#34;</span>,data <span style="color:#ff79c6">=</span> survey_melt, orient <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;h&#34;</span>);
+plt<span style="color:#ff79c6">.</span>xlabel(<span style="color:#f1fa8c">&#34;Number of developers&#34;</span>);
+plt<span style="color:#ff79c6">.</span>legend(bbox_to_anchor<span style="color:#ff79c6">=</span>(<span style="color:#bd93f9">1.04</span>,<span style="color:#bd93f9">1</span>), loc<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;upper left&#34;</span>);
+plt<span style="color:#ff79c6">.</span>ylabel(<span style="color:#f1fa8c">&#34;&#34;</span>);
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="/blog/uploads/stack_overflow/stack_overflow_survey_2019_21_0.png" alt="png"></p>
+<p>Our data shows that about 66% of the respondents are satisfied with their job, and about 22% report being slightly or very dissatisfied. The rest are in the middle of the scale. That&rsquo;s a pretty encouraging result! It seems like, at least in this sample, developers are mostly content in their jobs. These values are even higher when you look at <strong>career</strong> satisfaction, which tells us that some developers are still evaluating their career positively even if they don&rsquo;t have the perfect job at the moment.</p>
+<p>It&rsquo;s a bit messy to work with these many satisfaction levels, so I want to encode a new feature that simplifies this, with the pandas <em>.map()</em> method. The new column will have three possible values: <em>Satisfied</em>, <em>Unsatisfied</em> or <em>Neutral.</em></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">survey_dev[<span style="color:#f1fa8c">&#39;Satisfaction&#39;</span>] <span style="color:#ff79c6">=</span> survey_dev[<span style="color:#f1fa8c">&#39;JobSat&#39;</span>]<span style="color:#ff79c6">.</span>map({<span style="color:#f1fa8c">&#39;Very satisfied&#39;</span>:<span style="color:#f1fa8c">&#39;Satisfied&#39;</span>, <span style="color:#f1fa8c">&#39;Slightly satisfied&#39;</span>:<span style="color:#f1fa8c">&#39;Satisfied&#39;</span>,
+                                                <span style="color:#f1fa8c">&#39;Neither satisfied nor dissatisfied&#39;</span>: <span style="color:#f1fa8c">&#39;Neutral&#39;</span>,
+                                               <span style="color:#f1fa8c">&#39;Slightly dissatisfied&#39;</span>: <span style="color:#f1fa8c">&#39;Unsatisfied&#39;</span>, <span style="color:#f1fa8c">&#39;Very dissatisfied&#39;</span>:<span style="color:#f1fa8c">&#39;Unsatisfied&#39;</span> })
+<span style="color:#ff79c6">print</span>(<span style="color:#f1fa8c">&#34;Percentages:&#34;</span>)
+sat_percentages <span style="color:#ff79c6">=</span> np<span style="color:#ff79c6">.</span>round(<span style="color:#bd93f9">100</span><span style="color:#ff79c6">*</span>survey_dev[<span style="color:#f1fa8c">&#39;Satisfaction&#39;</span>]<span style="color:#ff79c6">.</span>value_counts()<span style="color:#ff79c6">/</span><span style="color:#8be9fd;font-style:italic">len</span>(survey_dev),<span style="color:#bd93f9">1</span>)
+<span style="color:#ff79c6">print</span>(sat_percentages)
+
+p_sat <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">100</span><span style="color:#ff79c6">*</span>(survey_dev[<span style="color:#f1fa8c">&#39;Satisfaction&#39;</span>]<span style="color:#ff79c6">==</span><span style="color:#f1fa8c">&#39;Satisfied&#39;</span>)<span style="color:#ff79c6">.</span>sum()<span style="color:#ff79c6">/</span><span style="color:#8be9fd;font-style:italic">len</span>(survey_dev)
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>Percentages:
+Satisfied      65.8
+Unsatisfied    21.7
+Neutral        12.0
+Name: Satisfaction, dtype: float64
+</code></pre>
+<h4 id="demographics">Demographics</h4>
+<h5 id="age">Age</h5>
+<p><img src="/blog/uploads/stack_overflow/stack_overflow_survey_2019_26_0.png" alt="png"></p>
+<p>With an average age of 31 years, this distribution is skewed towards younger people. This is what I would expect, since IT professions have seen a dramatic increase in popularity in recent times. I wish we had more data for experienced developers.</p>
+<p><img src="/blog/uploads/stack_overflow/stack_overflow_survey_2019_28_0.png" alt="png"></p>
+<p>As you can see, this plot doesn&rsquo;t really give me meaningful information. Each of the three groups still follows the overall age distribution, and it&rsquo;s difficult to make observations from just this plot.</p>
+<p>I think that, to really find out if age is a factor, I need to somehow compare numerically the satisfaction rate for a certain age group against the <strong>mean</strong> satisfaction for all ages.</p>
+<p>So, let&rsquo;s first divide all the age values in bins of 10 years each, and then we can plot this percentage difference for each bin.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">survey_dev[<span style="color:#f1fa8c">&#39;AgeGroup&#39;</span>] <span style="color:#ff79c6">=</span> pd<span style="color:#ff79c6">.</span>cut(x<span style="color:#ff79c6">=</span>survey_dev[<span style="color:#f1fa8c">&#39;Age&#39;</span>], bins<span style="color:#ff79c6">=</span>[<span style="color:#bd93f9">20</span>, <span style="color:#bd93f9">29</span>, <span style="color:#bd93f9">39</span>, <span style="color:#bd93f9">49</span>, <span style="color:#bd93f9">59</span>, <span style="color:#bd93f9">69</span>])
+age_groups <span style="color:#ff79c6">=</span> np<span style="color:#ff79c6">.</span>delete(np<span style="color:#ff79c6">.</span>array(survey_dev[<span style="color:#f1fa8c">&#39;AgeGroup&#39;</span>]<span style="color:#ff79c6">.</span>unique()),<span style="color:#bd93f9">3</span>)
+age_groups<span style="color:#ff79c6">.</span>sort()
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">age_percentage_data <span style="color:#ff79c6">=</span> percentageSatisfied(column <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;AgeGroup&#39;</span>)
+sns<span style="color:#ff79c6">.</span>barplot(y<span style="color:#ff79c6">=</span>age_percentage_data<span style="color:#ff79c6">-</span> p_sat, x <span style="color:#ff79c6">=</span> age_groups)
+<span style="color:#ff79c6">for</span> index, value <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">enumerate</span>(age_percentage_data):
+        plt<span style="color:#ff79c6">.</span>text(index <span style="color:#ff79c6">-</span><span style="color:#bd93f9">0.23</span>,value<span style="color:#ff79c6">-</span>p_sat <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">0.5</span>,<span style="color:#8be9fd;font-style:italic">str</span>(<span style="color:#f1fa8c">&#39;+&#39;</span><span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">str</span>(np<span style="color:#ff79c6">.</span>round(value<span style="color:#ff79c6">-</span>p_sat,<span style="color:#bd93f9">1</span>)))<span style="color:#ff79c6">+</span><span style="color:#f1fa8c">&#39;%&#39;</span>)
+<span style="color:#6272a4"># Line that shows the average percentage across all ages</span>
+plt<span style="color:#ff79c6">.</span>axhline(y<span style="color:#ff79c6">=</span>p_sat)
+plt<span style="color:#ff79c6">.</span>ylim(<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">10</span>)
+plt<span style="color:#ff79c6">.</span>ylabel(<span style="color:#f1fa8c">&#39;Percentage difference&#39;</span>)
+plt<span style="color:#ff79c6">.</span>xlabel(<span style="color:#f1fa8c">&#39;Age Group&#39;</span>)
+plt<span style="color:#ff79c6">.</span>title(<span style="color:#f1fa8c">&#39;Job satisfaction for different age groups&#39;</span>);
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="/blog/uploads/stack_overflow//stack_overflow_survey_2019_32_0.png" alt="png"></p>
+<p>By looking at it this way, some pattern emerges. Let&rsquo;s remember that the average satisfaction rate was 65.8%, so a 5% increase on top of that that is pretty meaningful. People under 40 make up the majority of our data pool, so it makes sense that their satisfaction levels are basically equal to the average.</p>
+<p>It&rsquo;s interesting to see how the rate increases with age (except from the last bin, which is made up of a very very small amount of data points). This information will tie in nicely with some observations on competence that are made in the next sections of the article.</p>
+<h5 id="gender">Gender</h5>
+<p>To simplify the analysis I&rsquo;m going to group all the responses other than &ldquo;Man&rdquo; and &ldquo;Woman&rdquo; in a &lsquo;Non-binary&rsquo; column, and I&rsquo;m also going to drop the null values. I&rsquo;m aware that <em>non-binary</em> doesn&rsquo;t cover the entire spectrum of gender possibilities other than man and woman, but please consider it a shorthand for non-binary, genderqueer, or gender non-conforming.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#6272a4">#Gender</span>
+<span style="color:#ff79c6">print</span>(survey_dev[<span style="color:#f1fa8c">&#39;Gender&#39;</span>]<span style="color:#ff79c6">.</span>value_counts() )
+
+<span style="color:#ff79c6">print</span>(<span style="color:#f1fa8c">&#39;</span><span style="color:#f1fa8c">\n</span><span style="color:#f1fa8c">Number of NULL gender values: &#39;</span> <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">str</span>(survey_dev[<span style="color:#f1fa8c">&#39;Gender&#39;</span>]<span style="color:#ff79c6">.</span>isnull()<span style="color:#ff79c6">.</span>sum()))
+
+man_p <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">100</span><span style="color:#ff79c6">*</span>(<span style="color:#8be9fd;font-style:italic">len</span>(survey_dev[survey_dev[<span style="color:#f1fa8c">&#39;Gender&#39;</span>] <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;Man&#39;</span>]) <span style="color:#ff79c6">/</span> <span style="color:#8be9fd;font-style:italic">len</span>(survey_dev))
+<span style="color:#ff79c6">print</span>(<span style="color:#f1fa8c">&#39;Percentage of developers who identify as men: &#39;</span> <span style="color:#ff79c6">+</span> <span style="color:#8be9fd;font-style:italic">str</span>(np<span style="color:#ff79c6">.</span>round(man_p,<span style="color:#bd93f9">2</span>)) <span style="color:#ff79c6">+</span> <span style="color:#f1fa8c">&#39;%&#39;</span>)
+<span style="color:#6272a4"># Creating a new category</span>
+survey_dev[<span style="color:#f1fa8c">&#39;Gender&#39;</span>] <span style="color:#ff79c6">=</span> np<span style="color:#ff79c6">.</span>where(((survey_dev[<span style="color:#f1fa8c">&#39;Gender&#39;</span>] <span style="color:#ff79c6">!=</span> <span style="color:#f1fa8c">&#39;Man&#39;</span>) <span style="color:#ff79c6">&amp;</span> (survey_dev[<span style="color:#f1fa8c">&#39;Gender&#39;</span>] <span style="color:#ff79c6">!=</span> <span style="color:#f1fa8c">&#39;Woman&#39;</span>)), <span style="color:#f1fa8c">&#39;Non-binary&#39;</span>, survey_dev[<span style="color:#f1fa8c">&#39;Gender&#39;</span>])
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>Man                                                            54731
+Woman                                                           4000
+Non-binary, genderqueer, or gender non-conforming                359
+Man;Non-binary, genderqueer, or gender non-conforming            109
+Woman;Non-binary, genderqueer, or gender non-conforming           92
+Woman;Man                                                         56
+Woman;Man;Non-binary, genderqueer, or gender non-conforming       34
+Name: Gender, dtype: int64
+
+Number of NULL gender values: 1992
+Percentage of developers who identify as men: 89.18%
+</code></pre>
+<p>It&rsquo;s probably not a surprise that the overwhelming majority of people who answered the survey are male. Since they make up most of the data, they set the average with regards to job satisfaction, so it will only be meaningful to look at how women and non-binary people evaluate their job, to see if it&rsquo;s different from the mean. Let&rsquo;s do that now.</p>
+<p><img src="/blog/uploads/stack_overflow/stack_overflow_survey_2019_38_0.png" alt="png"></p>
+<p>I don&rsquo;t feel comfortable making comments on any patterns that emerge from this plot, because I have such a small sample of women and non-binary people. There&rsquo;s no guarantee that any observations would generalize well.</p>
+<p>Still, if I had to comment on the data, I would say that non-binary people are less satisfied than average, and women slightly more. Of course, you could argue that women might have lower expectations since this field has historically been hostile to them, so it might take less to make them say they&rsquo;re content with what they have. Food for thought.</p>
+<p>In their own analysis, Stack Overflow observed that non-binary people value <strong>Diversity</strong> in the organization more highly than other demographics. The discontent we see in this data could stem from their dissatisfaction about the current state of diversity in tech.</p>
+<h4 id="education">Education</h4>
+<p>One thing I wondered is whether people who work in the field that they studied for are more satisfied than others. For developers, the &ldquo;relevant&rdquo; majors to consider would be (as they appear in the <em>UndergradMajor</em> column):</p>
+<ul>
+<li>
+<p>Web development or web design (front-end and full-stack developers)</p>
+</li>
+<li>
+<p>Computer science, computer engineering, or software engineering</p>
+</li>
+<li>
+<p>Information systems, information technology, or system administration</p>
+</li>
+</ul>
+<p>I will also consider the subcategory of people who work in data science and studied Mathematics/Statistics, since they are technically working in their study fields.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">survey_dev <span style="color:#ff79c6">=</span> survey_dev<span style="color:#ff79c6">.</span>assign(SameField<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;No&#39;</span>)
+<span style="color:#6272a4"># Developers who have relevant majors</span>
+majors <span style="color:#ff79c6">=</span> ((survey_dev[<span style="color:#f1fa8c">&#39;UndergradMajor&#39;</span>]<span style="color:#ff79c6">.</span>str<span style="color:#ff79c6">.</span>contains(<span style="color:#f1fa8c">&#39;web&#39;</span>))
+        <span style="color:#ff79c6">|</span>(survey_dev[<span style="color:#f1fa8c">&#39;UndergradMajor&#39;</span>]<span style="color:#ff79c6">.</span>str<span style="color:#ff79c6">.</span>contains(<span style="color:#f1fa8c">&#39;computer&#39;</span>))
+        <span style="color:#ff79c6">|</span> (survey_dev[<span style="color:#f1fa8c">&#39;UndergradMajor&#39;</span>]<span style="color:#ff79c6">.</span>str<span style="color:#ff79c6">.</span>contains(<span style="color:#f1fa8c">&#39;information&#39;</span>)) )
+<span style="color:#6272a4"># Developers working in data</span>
+data_scientist <span style="color:#ff79c6">=</span> ((survey_dev[<span style="color:#f1fa8c">&#39;DevType&#39;</span>]<span style="color:#ff79c6">.</span>str<span style="color:#ff79c6">.</span>contains(<span style="color:#f1fa8c">&#39;Data scientist&#39;</span>))
+                  <span style="color:#ff79c6">&amp;</span> (survey_dev[<span style="color:#f1fa8c">&#39;UndergradMajor&#39;</span>]<span style="color:#ff79c6">.</span>str<span style="color:#ff79c6">.</span>contains(<span style="color:#f1fa8c">&#39;statistics&#39;</span>)))
+
+survey_dev[<span style="color:#f1fa8c">&#39;SameField&#39;</span>] <span style="color:#ff79c6">=</span> np<span style="color:#ff79c6">.</span>where(majors, <span style="color:#f1fa8c">&#39;Yes&#39;</span>, survey_dev[<span style="color:#f1fa8c">&#39;SameField&#39;</span>])
+survey_dev[<span style="color:#f1fa8c">&#39;SameField&#39;</span>] <span style="color:#ff79c6">=</span> np<span style="color:#ff79c6">.</span>where(data_scientist, <span style="color:#f1fa8c">&#39;Yes&#39;</span>, survey_dev[<span style="color:#f1fa8c">&#39;SameField&#39;</span>])
+
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">grouped_bars_fraction(x<span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Satisfaction&#34;</span>,y <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Percentage&#34;</span>, hue <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;SameField&#34;</span>)
+plt<span style="color:#ff79c6">.</span>legend(title <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Related degree&#34;</span>);
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="/blog/uploads/stack_overflow//stack_overflow_survey_2019_43_0.png" alt="png"></p>
+<p>There&rsquo;s not much in the plot that catches my eye, I think that the differences are very small here.</p>
+<h4 id="work-related">Work-related</h4>
+<h5 id="compensation">Compensation</h5>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">country_count <span style="color:#ff79c6">=</span> survey_dev[<span style="color:#f1fa8c">&#39;Country&#39;</span>]<span style="color:#ff79c6">.</span>unique()<span style="color:#ff79c6">.</span>size
+<span style="color:#ff79c6">print</span>(f<span style="color:#f1fa8c">&#34;There are {country_count} different countries in the survey.&#34;</span>)
+top_countries <span style="color:#ff79c6">=</span>  survey_dev[<span style="color:#f1fa8c">&#39;Country&#39;</span>]<span style="color:#ff79c6">.</span>value_counts()[:<span style="color:#bd93f9">10</span>]
+<span style="color:#ff79c6">print</span>(<span style="color:#f1fa8c">&#39;The ten countries with the highest number of respondents are:&#39;</span>)
+<span style="color:#ff79c6">print</span>(top_countries)
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>There are 167 different countries in the survey.
+The ten countries with the highest number of respondents are:
+United States         15356
+India                  6327
+United Kingdom         4322
+Germany                3817
+Canada                 2373
+France                 1663
+Brazil                 1368
+Poland                 1361
+Australia              1343
+Russian Federation     1213
+Name: Country, dtype: int64
+
+There are 41695 developers who work outside of the US and the UK.
+</code></pre>
+<p>As you see, a good chunk of the respondents aren&rsquo;t from the United States or UK. India is very well represented, along with other countries all over the world.</p>
+<p>This makes my job trickier since we cannot just analyze the <em>Compensation</em> column as it is. Since compensation has been converted to US dollars for all survey respondents, it cannot give us any reliable information since the same amount of money will lead to wildly different purchasing powers in different countries.</p>
+<p>It will only be an useful metric when looking at <strong>developers working in the US</strong>, and that&rsquo;s what I&rsquo;m going to do since we still have a decently sized sample.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#6272a4"># select only people from the US</span>
+survey_usa <span style="color:#ff79c6">=</span> survey_dev<span style="color:#ff79c6">.</span>loc[survey_dev[<span style="color:#f1fa8c">&#39;Country&#39;</span>]<span style="color:#ff79c6">==</span><span style="color:#f1fa8c">&#39;United States&#39;</span>]
+<span style="color:#6272a4"># Plot with vertical lines indicating</span>
+<span style="color:#6272a4"># avg salaries for different positions</span>
+sns<span style="color:#ff79c6">.</span>distplot(survey_usa[<span style="color:#f1fa8c">&#39;ConvertedComp&#39;</span>]);
+plt<span style="color:#ff79c6">.</span>xlim(<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">400000</span>)
+plt<span style="color:#ff79c6">.</span>axvline(<span style="color:#bd93f9">61000</span>, label <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;System admin&#39;</span>, ls <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;--&#39;</span>, c <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;m&#39;</span>, alpha <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0.6</span>)
+plt<span style="color:#ff79c6">.</span>axvline(<span style="color:#bd93f9">75000</span>, label <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;Full stack developer&#39;</span>, ls <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;--&#39;</span>, c <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;c&#39;</span>, alpha <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0.6</span>)
+plt<span style="color:#ff79c6">.</span>axvline(<span style="color:#bd93f9">96000</span>, label <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;Data Scientist&#39;</span>,ls <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;--&#39;</span>, c <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;b&#39;</span>)
+plt<span style="color:#ff79c6">.</span>legend(title <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Median salaries&#34;</span>)
+plt<span style="color:#ff79c6">.</span>xlabel(<span style="color:#f1fa8c">&#34;Annual salary in US Dollars&#34;</span>);
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="/blog/uploads/stack_overflow//stack_overflow_survey_2019_50_0.png" alt="png"></p>
+<p class = "callout warning">I had to cut the plot because of some outliers on the far right, at around 2 million dollars. I'm inclined to believe that they were fake data points, so I won't analyze them further.<p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#6272a4"># Creating different compensation brackets</span>
+survey_dev[<span style="color:#f1fa8c">&#39;Compensation&#39;</span>] <span style="color:#ff79c6">=</span> pd<span style="color:#ff79c6">.</span>cut(x<span style="color:#ff79c6">=</span>survey_dev[<span style="color:#f1fa8c">&#39;ConvertedComp&#39;</span>], bins<span style="color:#ff79c6">=</span>[<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">25000</span>,<span style="color:#bd93f9">50000</span>,<span style="color:#bd93f9">75000</span>,<span style="color:#bd93f9">125000</span>,<span style="color:#bd93f9">175000</span>,<span style="color:#bd93f9">250000</span>,<span style="color:#bd93f9">600000</span>])
+comp_groups <span style="color:#ff79c6">=</span> np<span style="color:#ff79c6">.</span>delete(survey_dev[<span style="color:#f1fa8c">&#39;Compensation&#39;</span>]<span style="color:#ff79c6">.</span>unique(),<span style="color:#bd93f9">1</span>)
+<span style="color:#6272a4"># Replacing interval names</span>
+comp_groups_short <span style="color:#ff79c6">=</span> [<span style="color:#f1fa8c">&#39;&lt;25K&#39;</span>, <span style="color:#f1fa8c">&#39;25K-50K&#39;</span>,<span style="color:#f1fa8c">&#39;50K-75K&#39;</span> ,<span style="color:#f1fa8c">&#39;75K-125K&#39;</span>, <span style="color:#f1fa8c">&#39;125K-175K&#39;</span>, <span style="color:#f1fa8c">&#39;175K-250K&#39;</span>, <span style="color:#f1fa8c">&#39;&gt;250K&#39;</span>]
+<span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#8be9fd;font-style:italic">len</span>(comp_groups)):
+    comp_groups[i] <span style="color:#ff79c6">=</span> comp_groups_short[i]
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="/blog/uploads/stack_overflow//stack_overflow_survey_2019_53_0.png" alt="png"></p>
+<p>As you can see the brackets aren&rsquo;t all the same size, because I wanted to look more closely at some areas.</p>
+<p>I can&rsquo;t say these result surprise me: the worst decrease in satisfaction occurs among people who are paid well below the average. Among people that make more than 50K dollars a year, satisfaction keeps increasing for each bracket. The only exception is the highest bracket, but if we look at the distribution of the survey data, there are very few people with a salary in this range.</p>
+<h5 id="organization-size">Organization size</h5>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">size_categories <span style="color:#ff79c6">=</span> [<span style="color:#f1fa8c">&#39;Just me - I am a freelancer, sole proprietor, etc.&#39;</span>,<span style="color:#f1fa8c">&#39;2-9 employees&#39;</span>,
+          <span style="color:#f1fa8c">&#39;10 to 19 employees&#39;</span>,<span style="color:#f1fa8c">&#39;20 to 99 employees&#39;</span>,<span style="color:#f1fa8c">&#39;100 to 499 employees&#39;</span>,
+          <span style="color:#f1fa8c">&#39;500 to 999 employees&#39;</span>,<span style="color:#f1fa8c">&#39;1,000 to 4,999 employees&#39;</span>, <span style="color:#f1fa8c">&#39;5,000 to 9,999 employees&#39;</span>,  <span style="color:#f1fa8c">&#39;10,000 or more employees&#39;</span>]
+<span style="color:#6272a4"># The plots will look better with shorter category names</span>
+size_categories_short <span style="color:#ff79c6">=</span> [<span style="color:#f1fa8c">&#39;Just me&#39;</span>,<span style="color:#f1fa8c">&#39;2-9&#39;</span>,
+          <span style="color:#f1fa8c">&#39;10-19&#39;</span>,<span style="color:#f1fa8c">&#39;20-99&#39;</span>,<span style="color:#f1fa8c">&#39;100-499&#39;</span>,
+          <span style="color:#f1fa8c">&#39;500-999&#39;</span>,<span style="color:#f1fa8c">&#39;1,000-4,999&#39;</span>, <span style="color:#f1fa8c">&#39;5,000-9,999&#39;</span>,  <span style="color:#f1fa8c">&#39;&gt;10,000&#39;</span>]
+
+
+orgsize_satisfied <span style="color:#ff79c6">=</span> percentageSatisfied(column <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;OrgSize&#39;</span>, dataset <span style="color:#ff79c6">=</span> survey_dev)<span style="color:#ff79c6">.</span>reindex(size_categories)
+plt<span style="color:#ff79c6">.</span>figure(figsize<span style="color:#ff79c6">=</span>(<span style="color:#bd93f9">10</span>,<span style="color:#bd93f9">5</span>))
+lollipop(size_categories_short, orgsize_satisfied, xshift<span style="color:#ff79c6">=</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">0.1</span>)
+plt<span style="color:#ff79c6">.</span>ylim(<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">100</span>);
+plt<span style="color:#ff79c6">.</span>axhline(p_sat, color <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;m&#39;</span>, ls <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;--&#39;</span>, alpha <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0.5</span>, label <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;Mean&#39;</span>)
+plt<span style="color:#ff79c6">.</span>legend()
+plt<span style="color:#ff79c6">.</span>ylabel(<span style="color:#f1fa8c">&#39;Satisfied percentage&#39;</span>)
+plt<span style="color:#ff79c6">.</span>title(<span style="color:#f1fa8c">&#39;Job satisfaction vs organization size&#39;</span>, fontsize <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">15</span>);
+plt<span style="color:#ff79c6">.</span>xlabel(<span style="color:#f1fa8c">&#39;# of employees&#39;</span>);
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="/blog/uploads/stack_overflow//stack_overflow_survey_2019_56_0.png" alt="png"></p>
+<p>There doesn&rsquo;t seem to be any strong correlation between the number of employees in a company and job satisfaction.</p>
+<h5 id="working-remotely">Working remotely</h5>
+<p><img src="/blog/uploads/stack_overflow//stack_overflow_survey_2019_59_1.png" alt="png"></p>
+<p>The WorkRemote field has way too many values for my taste, so I&rsquo;m going to refactor this column, since I still think it will be interesting to study it. I want to end up with three categories: <em>full-time remote, sometimes remote, not remote</em>.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#6272a4"># new Remote column</span>
+remote_cat <span style="color:#ff79c6">=</span> [<span style="color:#f1fa8c">&#39;Never&#39;</span>, <span style="color:#f1fa8c">&#39;Part-time remote&#39;</span>, <span style="color:#f1fa8c">&#39;Full-time remote&#39;</span>]
+survey_dev <span style="color:#ff79c6">=</span> survey_dev<span style="color:#ff79c6">.</span>assign(Remote<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;Never&#39;</span>)
+
+full_time <span style="color:#ff79c6">=</span> (survey_dev[<span style="color:#f1fa8c">&#39;WorkRemote&#39;</span>]<span style="color:#ff79c6">.</span>str<span style="color:#ff79c6">.</span>contains(<span style="color:#f1fa8c">&#39;all or almost&#39;</span>))
+part_time <span style="color:#ff79c6">=</span> ( (survey_dev[<span style="color:#f1fa8c">&#39;WorkRemote&#39;</span>]<span style="color:#ff79c6">.</span>str<span style="color:#ff79c6">.</span>contains(<span style="color:#f1fa8c">&#39;week&#39;</span>))
+          <span style="color:#ff79c6">|</span> (survey_dev[<span style="color:#f1fa8c">&#39;WorkRemote&#39;</span>]<span style="color:#ff79c6">.</span>str<span style="color:#ff79c6">.</span>contains(<span style="color:#f1fa8c">&#39;half&#39;</span>))
+             <span style="color:#ff79c6">|</span> (survey_dev[<span style="color:#f1fa8c">&#39;WorkRemote&#39;</span>]<span style="color:#ff79c6">.</span>str<span style="color:#ff79c6">.</span>contains(<span style="color:#f1fa8c">&#39;few&#39;</span>)) )
+
+survey_dev[<span style="color:#f1fa8c">&#39;Remote&#39;</span>] <span style="color:#ff79c6">=</span> np<span style="color:#ff79c6">.</span>where(full_time, <span style="color:#f1fa8c">&#39;Full-time remote&#39;</span>, survey_dev[<span style="color:#f1fa8c">&#39;Remote&#39;</span>])
+survey_dev[<span style="color:#f1fa8c">&#39;Remote&#39;</span>] <span style="color:#ff79c6">=</span> np<span style="color:#ff79c6">.</span>where(part_time, <span style="color:#f1fa8c">&#39;Part-time remote&#39;</span>, survey_dev[<span style="color:#f1fa8c">&#39;Remote&#39;</span>])
+
+survey_dev[<span style="color:#f1fa8c">&#39;Remote&#39;</span>]<span style="color:#ff79c6">.</span>value_counts()
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>Never               36682
+Part-time remote    23823
+Full-time remote      868
+Name: Remote, dtype: int64
+</code></pre>
+<p>Full-time remote developers are really rare, as I expected. Let&rsquo;s see if we can detect some satisfaction pattern.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">remote_satisfied <span style="color:#ff79c6">=</span> percentageSatisfied(column <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;Remote&#39;</span>, dataset <span style="color:#ff79c6">=</span> survey_dev)<span style="color:#ff79c6">.</span>reindex(remote_cat)
+sns<span style="color:#ff79c6">.</span>barplot(y<span style="color:#ff79c6">=</span>remote_satisfied, x <span style="color:#ff79c6">=</span> remote_cat)
+plt<span style="color:#ff79c6">.</span>xlabel(<span style="color:#f1fa8c">&#39;Remote work&#39;</span>);
+<span style="color:#ff79c6">for</span> index, value <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">enumerate</span>(remote_satisfied):
+        plt<span style="color:#ff79c6">.</span>text(index <span style="color:#ff79c6">-</span><span style="color:#bd93f9">0.15</span>,value <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">4</span>,<span style="color:#8be9fd;font-style:italic">str</span>(value)<span style="color:#ff79c6">+</span><span style="color:#f1fa8c">&#39;%&#39;</span>)
+plt<span style="color:#ff79c6">.</span>ylim(<span style="color:#bd93f9">0</span>,<span style="color:#bd93f9">100</span>);
+plt<span style="color:#ff79c6">.</span>axhline(p_sat, color <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;m&#39;</span>, ls <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;--&#39;</span>, alpha <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0.5</span>, label <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;Mean&#39;</span>)
+plt<span style="color:#ff79c6">.</span>legend()
+plt<span style="color:#ff79c6">.</span>ylabel(<span style="color:#f1fa8c">&#39;Satisfied percentage&#39;</span>);
+plt<span style="color:#ff79c6">.</span>title(<span style="color:#f1fa8c">&#39;Job satisfaction vs remote work&#39;</span>);
+
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="/blog/uploads/stack_overflow//stack_overflow_survey_2019_63_0.png" alt="png"></p>
+<p>Now, as I mentioned before, <strong>full-time remote developers</strong> make up a tiny part of our dataset, so we don&rsquo;t know if it&rsquo;s a representative sample. However, the data we do have tells that these workers are <strong>much less satisfied</strong> than average, while developers who <em>sometimes</em> work remotely are about 5% more satisfied.</p>
+<p>It might be interesting to compare these findings to those reported in Buffer&rsquo;s latest<a href="https://lp.buffer.com/state-of-remote-work-2020" title="https://lp.buffer.com/state-of-remote-work-2020"> State of Remote Work</a> survey. Their survey was mostly focused on remote workers, so their insights are probably more reliable.</p>
+<h5 id="competence-at-work">Competence at work</h5>
+<p>We still haven&rsquo;t talked about the <em>ImpSyn</em> column, which contains the answer to the question:</p>
+<blockquote>
+<p>For the specific work you do, and the years of experience you have, how do you rate your own level of competence?</p>
+</blockquote>
+<p>I think competence is an interesting thing to look at in this context. Various influential thinkers (such as <a href="https://www.calnewport.com/books/so-good/" title="https://www.calnewport.com/books/so-good/">Cal Newport</a> in his book <em>Be so good they can&rsquo;t ignore you</em>, which I recommend) believe that job satisfaction doesn&rsquo;t come from innate passion, but rather from <em>becoming very good at what you do</em>. If they are right we might see some correlation between these two variables.</p>
+<p><img src="/blog/uploads/stack_overflow//stack_overflow_survey_2019_67_0.png" alt="png"></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">props <span style="color:#ff79c6">=</span> survey_dev<span style="color:#ff79c6">.</span>groupby(<span style="color:#f1fa8c">&#39;ImpSyn&#39;</span>)[<span style="color:#f1fa8c">&#39;JobSat&#39;</span>]<span style="color:#ff79c6">.</span>value_counts(normalize<span style="color:#ff79c6">=</span>True)<span style="color:#ff79c6">.</span>unstack()
+categories <span style="color:#ff79c6">=</span>  [<span style="color:#f1fa8c">&#34;Far below average&#34;</span>, <span style="color:#f1fa8c">&#34;A little below average&#34;</span>, <span style="color:#f1fa8c">&#34;Average&#34;</span>, <span style="color:#f1fa8c">&#34;A little above average&#34;</span>, <span style="color:#f1fa8c">&#34;Far above average&#34;</span>]
+props <span style="color:#ff79c6">=</span> props<span style="color:#ff79c6">.</span>reindex(categories)
+props<span style="color:#ff79c6">.</span>plot(kind<span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;barh&#39;</span>, stacked<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;True&#39;</span>,sort_columns <span style="color:#ff79c6">=</span> False,edgecolor<span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;none&#34;</span> )
+plt<span style="color:#ff79c6">.</span>ylabel(<span style="color:#f1fa8c">&#34;Perceived competence at work&#34;</span>)
+plt<span style="color:#ff79c6">.</span>legend(bbox_to_anchor<span style="color:#ff79c6">=</span>(<span style="color:#bd93f9">1.04</span>,<span style="color:#bd93f9">1</span>), loc<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;upper left&#34;</span>, title <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Job satisfaction&#34;</span>);
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="/blog/uploads/stack_overflow//stack_overflow_survey_2019_68_0.png" alt="png"></p>
+<p>There&rsquo;s definitely <strong>something there</strong>. Developers who perceive themselves as having below average abilities are clearly less satisfied at work compared to their more competent (or at least more confident) colleagues.</p>
+<p>The difference is even more striking if we plot these competence categories against the percentage of developers who are in the <em>Satisfied</em> category.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">comp_satisfied <span style="color:#ff79c6">=</span> percentageSatisfied(column <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;ImpSyn&#39;</span>)<span style="color:#ff79c6">.</span>reindex(categories)
+plt<span style="color:#ff79c6">.</span>figure(figsize<span style="color:#ff79c6">=</span>(<span style="color:#bd93f9">9</span>,<span style="color:#bd93f9">5</span>))
+lollipop(categories, comp_satisfied, xshift<span style="color:#ff79c6">=</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">0.13</span>, yshift <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">5</span>)
+plt<span style="color:#ff79c6">.</span>ylim(<span style="color:#bd93f9">20</span>,<span style="color:#bd93f9">100</span>);
+plt<span style="color:#ff79c6">.</span>axhline(p_sat, color <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;m&#39;</span>, ls <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;--&#39;</span>, alpha <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0.5</span>, label <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;Mean&#39;</span>)
+plt<span style="color:#ff79c6">.</span>legend()
+plt<span style="color:#ff79c6">.</span>title(<span style="color:#f1fa8c">&#39;Job satisfaction vs competence&#39;</span>, fontsize <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">15</span>);
+plt<span style="color:#ff79c6">.</span>xlabel(<span style="color:#f1fa8c">&#39;Perceived competence&#39;</span>);
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="/blog/uploads/stack_overflow//stack_overflow_survey_2019_71_0.png" alt="png"></p>
+<p>We can clearly see the fraction of satisfied developers growing with increasing competence.</p>
+<p>Now, there&rsquo;s a caveat: <strong>perceived</strong> competence is necessarily subjective, and some people might be more likely to consider themselves competent than other. The people of Stack Overflow, in their own analysis of this data, found that men were more likely than women to give &ldquo;above average&rdquo; answers to this question.</p>
+<p>I still think that the patterns in the plots are clear enough that they can be considered valid even if the underlying data is not exactly objective.</p>
+<h5 id="job-level">Job level</h5>
+<p>Unfortunately we don&rsquo;t have data on job levels (junior,senior, etc). The closest thing to that is the number of years spent coding as a professional, and the <em>MgrWant</em> column. The column contains the answer to &ldquo;Would you like to become a manager some day?&quot;, and it  also includes the precious answer of those who are already managers.</p>
+<p>I wanted to look at the &ldquo;Manager&rdquo; subset of the survey more closely because there&rsquo;s a bit of a <em>stereotype</em> around engineers, and technical workers in general, and the stereotype is that they would rather <strong>remain on the &ldquo;technical side&rdquo;</strong> of things instead of being saddled with people to manage and having to deal with project management, bureaucracy, etc.</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#6272a4"># New binary &#39;manager&#39; column</span>
+survey_dev <span style="color:#ff79c6">=</span> survey_dev<span style="color:#ff79c6">.</span>assign(Manager<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;No&#39;</span>)
+survey_dev[<span style="color:#f1fa8c">&#39;Manager&#39;</span>] <span style="color:#ff79c6">=</span> np<span style="color:#ff79c6">.</span>where( (survey_dev[<span style="color:#f1fa8c">&#39;MgrWant&#39;</span>]<span style="color:#ff79c6">.</span>str<span style="color:#ff79c6">.</span>contains(<span style="color:#f1fa8c">&#39;manager&#39;</span>)),<span style="color:#f1fa8c">&#39;Yes&#39;</span>, survey_dev[<span style="color:#f1fa8c">&#39;Manager&#39;</span>])
+
+managers <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">len</span>(survey_dev<span style="color:#ff79c6">.</span>loc[survey_dev[<span style="color:#f1fa8c">&#39;Manager&#39;</span>]<span style="color:#ff79c6">==</span><span style="color:#f1fa8c">&#39;Yes&#39;</span>])
+mgn_percentage <span style="color:#ff79c6">=</span> np<span style="color:#ff79c6">.</span>round(<span style="color:#bd93f9">100</span><span style="color:#ff79c6">*</span>managers<span style="color:#ff79c6">/</span><span style="color:#8be9fd;font-style:italic">len</span>(survey_dev),<span style="color:#bd93f9">1</span>)
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>There are 12013 managers among the survey takers. (19.6% of total)
+</code></pre>
+<p><img src="/blog/uploads/stack_overflow//stack_overflow_survey_2019_77_0.png" alt="png"></p>
+<p>Seems like managers are no less satisfied then their colleagues, and maybe even a bit more. Of course, being a manager usually correlates with higher compensation and recognition of competence, which as we&rsquo;ve seen are predictors of job satisfaction.</p>
+<h3 id="conclusions">Conclusions</h3>
+<p>I think we&rsquo;ve learned some interesting things in this analysis. Not all of the plots showed obvious patterns, but those that did provided some food for thought</p>
+<p>I&rsquo;ll take a moment to stress once more that these considerations were sometimes made by looking at a limited sample, and that a lot of the variables we looked at are correlated with each other.</p>
+<p>Here&rsquo;s a summary of the findings:</p>
+<p>- <strong>Gender:</strong> men made up almost 90% of the survey respondents. Analyzing our relatively small sample of women and non-binary developers, women showed a slightly higher satisfaction than average, while non-binary people were well below the survey&rsquo;s average.</p>
+<p><strong>- Age group:</strong> developers over 40 years old reported a higher satisfaction rate then their younger counterparts. In turn, this can be related to competence and salary, since both usually grow with age.</p>
+<p>- <strong>Perceived competence:</strong> there&rsquo;s an evident positive correlation between feeling competent at work and feeling satisfied with a job. It&rsquo;s no surprise that people enjoy themselves more when they are working on something they&rsquo;re good at, but it was nice to see it show so clearly in the data</p>
+<p>- <strong>Compensation:</strong> job satisfaction clearly increased with compensation, with developers paid below average wages being the least satisfied group.</p>
+<p>- <strong>Remote work:</strong> the happiest group was the one that is allowed to work remotely for some time. People working remotely all the time were much less satisfied. Problems like isolation, disorganization and burnout are common among fully remote workers, and they might be the cause for this. Still, our sample of remote workers was a bit small.</p>
+<p>The Stack Overflow survey offers a lot of exciting possibilities for analysis, so I&rsquo;d like to <em>thank them</em> for making the data available.
+<br>
+An idea could be to apply some clustering algorithms to identify different &ldquo;types&rdquo; of developers. And since the data is available starting from 2011, you could also look at how the responses have changed over time. I&rsquo;m sure there are many more ways to approach this dataset.</p>
+<p>Until next time,
+<br>
+Carolina</p>
+
+			</div>
+
+
+			<div class="addthis_inline_share_toolbox"></div>
+
+			<br>
+			<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "carolinac" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+			
+		</div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Carolina Camassa |  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-138928957-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e5a2f4cf30bc5d4"></script>
+<script>feather.replace()</script>
+</body>
+</html>

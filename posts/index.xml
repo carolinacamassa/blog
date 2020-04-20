@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Carolina Camassa</copyright>
-    <lastBuildDate>Tue, 31 Mar 2020 22:10:02 +0530</lastBuildDate>
+    <lastBuildDate>Mon, 20 Apr 2020 20:32:02 +0530</lastBuildDate>
     
 	<atom:link href="https://carolinacamassa.tech/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>What makes developers satisfied with their jobs?</title>
+      <link>https://carolinacamassa.tech/blog/posts/stack_overflow_survey_2019/</link>
+      <pubDate>Mon, 20 Apr 2020 20:32:02 +0530</pubDate>
+      
+      <guid>https://carolinacamassa.tech/blog/posts/stack_overflow_survey_2019/</guid>
+      <description>Every year since 2011, Stack Overflow has conducted a survey to ask developers a variety of question about what it&amp;rsquo;s like to work as a developer.</description>
+    </item>
     
     <item>
       <title>Why you should stop writing all your articles on Medium</title>

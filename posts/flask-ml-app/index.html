@@ -142,7 +142,7 @@ I was looking for a small side project to learn how to use the Flask microframew
 <p>The user can change the input values with the sliders, and the displayed number is updated in real time. By clicking the <em>submit</em> button, the data is sent to the app who then feeds it into a pre-trained machine learning model. The model outputs a prediction on the habitability score of the planet, and the score is then displayed on the screen.</p>
 <p>You can find the repo for this tutorial <a href="https://github.com/carolinacamassa/exoplanet-model-app">here</a>.
 This isn&rsquo;t meant to be an introduction to Flask, so I will give for granted some basic concepts like routes and templates. If these words don&rsquo;t ring a bell for you, I recommend reading <a href="https://hackersandslackers.com/your-first-flask-application">this guide</a> first.</p>
-<h4 id="about-the-data">About the data</h4>
+<h3 id="about-the-data">About the data</h3>
 <p>Both the dataset and the information on the habitability criteria can be found <a href="http://phl.upr.edu/projects/habitable-exoplanets-catalog/data/database">here</a>
 The exoplanets in the catalogue are given one out of three possible scores:</p>
 <ul>
@@ -154,7 +154,7 @@ The exoplanets in the catalogue are given one out of three possible scores:</p>
 <p>I want to emphasize two things before moving on to the code.</p>
 <p>First, the machine learning model was not the focus of the project, so I spent very little time on it; the goal was simply to build something that could output a prediction, regardless on how reliable that prediction was. So, don&rsquo;t use the notebook as an example of good data exploration and model training.</p>
 <p>Secondly, this app was made for fun. It&rsquo;s not meant to have any scientific value despite relying on astrophysical data. This might sound obvious, but you can never be too careful 👀</p>
-<h4 id="getting-started-with-the-app">Getting started with the app</h4>
+<h3 id="getting-started-with-the-app">Getting started with the app</h3>
 <p>To see the app in action, you first have to clone the <a href="https://github.com/carolinacamassa/exoplanet-model-app">repository</a> to your machine. Once you&rsquo;ve done that, you can see the project&rsquo;s structure:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -225,7 +225,7 @@ flask run
 <p>Since we&rsquo;ve set the <em>FLASK_DEBUG</em> variable to 1, the content of the page will automatically reload every time you modify the contents of the app, which is very useful during development.
 Now that you&rsquo;ve tried the app, let&rsquo;s find out what actually goes on under the hood.</p>
 <p class = "callout info">The command line code I included works on Windows, but the Linux/Mac alternatives can be easily found on Google.</p>
-<h4 id="setting-up-the-form">Setting up the form</h4>
+<h3 id="setting-up-the-form">Setting up the form</h3>
 <p>Dealing with forms can be a headache, but luckily the <a href="https://flask-wtf.readthedocs.io/en/stable/">Flask-WTF</a> library makes everything much more manageable. It&rsquo;s an integration of WTForms into Flask that simplifies the process of form creation, validation and submission.</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -270,7 +270,7 @@ Now that you&rsquo;ve tried the app, let&rsquo;s find out what actually goes on 
 </div>
 <p>It&rsquo;s important to include a Submit field that the user can click to actually transmit the input.
 For our form we&rsquo;re using the <em>DecimalRange</em> field, which is derived from the HTML5 range type input. You will see soon how easy processing and displaying the form&rsquo;s data is.</p>
-<h4 id="the-front-end">The Front-end</h4>
+<h3 id="the-front-end">The Front-end</h3>
 <p>At the moment we&rsquo;re missing the interface the user will interact with when loading the app. I&rsquo;ve created a simple index.html template, adding some CSS to make it sleeker. I&rsquo;ve used two CSS frameworks to speed up the design part: <a href="https://materializecss.com/">Materialize</a> (mostly because it makes the sliders look very nice) and <a href="http://tachyons.io/">Tachyons</a>.</p>
 <p>Here is how a single input field looks in HTML:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -319,7 +319,7 @@ For our form we&rsquo;re using the <em>DecimalRange</em> field, which is derived
 You'll notice that the habitability prediction isn't updated every time an input value is changed, but only when the user decides to submit the data.  
 This makes the implementation easier, but if you're looking for some Flask practice you can try to add real-time predictions.
 </p>
-<h4 id="integrating-the-model">Integrating the model</h4>
+<h3 id="integrating-the-model">Integrating the model</h3>
 <p>Until now our app hasn&rsquo;t been connected to the model in any way; the sliders work and the user can click the Submit button, but the habitability score stays the same.
 How can we actually make the trained model available to the app to make its predictions? The answer is <em>serialization</em>.</p>
 <blockquote>
@@ -362,7 +362,7 @@ features <span style="color:#ff79c6">=</span> [<span style="color:#f1fa8c">&#39;
 </div>
 </div>
 <p>This is all we need for now to have the model ready to work. As you can see, it&rsquo;s pretty straightforward. What&rsquo;s left is actually tying together the two sides of the app we&rsquo;ve worked on - the user input and the prediction.</p>
-<h4 id="putting-it-all-together">Putting it all together</h4>
+<h3 id="putting-it-all-together">Putting it all together</h3>
 <p>Flask uses <em>routes</em> to decide which <em>views</em> to serve to the user.
 <em>Routes</em> can be defined as URL patterns of an app (like <code>myapp.com/home</code> or <code>myapp.com/about</code>).<br>
 <em>Views</em> refer to the content to be served at these URLs, in our case the index page containing the right habitability prediction for the user&rsquo;s input.</p>

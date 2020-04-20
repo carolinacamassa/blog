@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Carolina Camassa</copyright>
-    <lastBuildDate>Tue, 31 Mar 2020 22:10:02 +0530</lastBuildDate>
+    <lastBuildDate>Mon, 20 Apr 2020 20:32:02 +0530</lastBuildDate>
     
 	<atom:link href="https://carolinacamassa.tech/blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>data science</title>
+      <link>https://carolinacamassa.tech/blog/tags/data-science/</link>
+      <pubDate>Mon, 20 Apr 2020 20:32:02 +0530</pubDate>
+      
+      <guid>https://carolinacamassa.tech/blog/tags/data-science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tutorial</title>
+      <link>https://carolinacamassa.tech/blog/tags/tutorial/</link>
+      <pubDate>Mon, 20 Apr 2020 20:32:02 +0530</pubDate>
+      
+      <guid>https://carolinacamassa.tech/blog/tags/tutorial/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>blogging</title>
@@ -54,15 +72,6 @@
       <pubDate>Sun, 08 Mar 2020 20:08:02 +0530</pubDate>
       
       <guid>https://carolinacamassa.tech/blog/tags/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tutorial</title>
-      <link>https://carolinacamassa.tech/blog/tags/tutorial/</link>
-      <pubDate>Sun, 08 Mar 2020 20:08:02 +0530</pubDate>
-      
-      <guid>https://carolinacamassa.tech/blog/tags/tutorial/</guid>
       <description></description>
     </item>
     
