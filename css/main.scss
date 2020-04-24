@@ -358,6 +358,10 @@ ul {
   color: $links;
 }
 
+.post img{
+  max-width: 80%;
+}
+
 .post-header {
   display: flex;
 }
