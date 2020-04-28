@@ -401,13 +401,13 @@ ul {
 
 .post .title.small {
   margin: 0 0 10px;
-  font-size: 1rem;
+  font-size: 1.2rem;
 
   a {
-    padding-bottom: 1.3px;
+    //padding-bottom: 1.3px;
     color: black;
-    border-bottom: 1px solid $accent;
-    transition: background 80ms;
+    //border-bottom: 1px solid $accent;
+    //transition: background 80ms;
   }
 
   a:hover {}
