@@ -132,7 +132,7 @@
     <li><a href="#bonus-sharing-pretty-code-snippets-with-carbon">Bonus: Sharing pretty code snippets with Carbon</a></li>
   </ul>
 </nav>
-				<p>After starting this blog, I&rsquo;ve gotten better at quickly converting and editing Jupyter notebooks so that they&rsquo;re publishing-ready. I thought I would share some of the tricks and shortcuts I use.</p>
+				<p>After starting this blog, I&rsquo;ve gotten better at quickly converting and editing Jupyter notebooks so that they&rsquo;re publish-ready. I thought I would share some of the tricks and shortcuts I use.</p>
 <h3 id="efficient-conversion">Efficient conversion</h3>
 <p>One of the biggest pain points I&rsquo;ve experienced when switching from notebooks to blog posts was editing out the stuff I didn&rsquo;t want.
 Readers don&rsquo;t need to see every single line of code, so I usually converted the .ipynb file to markdown and then manually removed the code cells I didn&rsquo;t want to show. This wasn&rsquo;t ideal.</p>
@@ -163,7 +163,8 @@ Check the parentheses and that you have the quotation marks.</p>
 <h4 id="jupyter-notebook">Jupyter Notebook</h4>
 <p>If you haven&rsquo;t already, you need to show the tags field for each cell. You can do it bly clicking on View-&gt;Cell ToolBar-&gt;Tags. Now you can add the tags like this:
 <img src="/blog/uploads/jupyter_notebook_blog/jupyter_notebook_tags.png" alt="">
-Save the notebook and you&rsquo;re ready for the next step, which is configuring the nbconvert preprocessors. If you read the <a href="https://nbconvert.readthedocs.io/en/latest/config_options.html">documentation</a>, you&rsquo;ll learn that you can specify some preprocessor settings to nbconvert when you write the conversion command.
+Save the notebook and you&rsquo;re ready for the next step, which is configuring the nbconvert preprocessors.</p>
+<p>If you read the <a href="https://nbconvert.readthedocs.io/en/latest/config_options.html">documentation</a>, you&rsquo;ll learn that you can specify some preprocessor settings to nbconvert when you write the conversion command.
 However, I think it&rsquo;s annoying to have to add those extra configurations every time, so I prefer to edit the default configuration instead.
 To do that, you&rsquo;ll need to type in your command line <code>jupyter nbconvert --generate-config</code>.
 This will create a file named <code>jupyter_nbconvert_config.py</code> in the <em>.jupyter/</em> folder inside your main user directory. Open the file and add these lines:</p>
@@ -233,10 +234,11 @@ tags:
 </code></pre></td></tr></table>
 </div>
 </div><p>I use Hugo as a static site generator and YAML as a front matter format - other common ones are TOML and JSON.
-If I want to write the front matter direcly in Jupyter to save time, you can put it in the first cell and select the <em>Raw</em> format for the cell.</p>
+If you want to write the front matter direcly in Jupyter to save time, you can put it in the first cell and select the <em>Raw</em> format for the cell.</p>
 <h3 id="bonus-sharing-pretty-code-snippets-with-carbon">Bonus: Sharing pretty code snippets with Carbon</h3>
 <p>This is not direcly related to jupyter notebooks, but I still think that it will be useful to tech writers. I was certainly delighted when I found about it.
-I&rsquo;m talking about <a href="https://carbon.now.sh/">Carbon</a>, a free tool to &ldquo;create beautiful images of your source code&rdquo;, in their words. You might have seen cool-looking snippets made with Carbon on Twitter, Linkedin, or in a blog post.
+I&rsquo;m talking about <a href="https://carbon.now.sh/">Carbon</a>, a free tool to &ldquo;create beautiful images of your source code&rdquo;, in their words.<br>
+You might have seen cool-looking snippets made with Carbon on Twitter, Linkedin, or in a blog post:
 <img src="/blog/uploads/jupyter_notebook_blog/carbon_example.png" alt=""></p>
 <p>Here are some of Carbon&rsquo;s highlights:</p>
 <ul>
@@ -244,8 +246,8 @@ I&rsquo;m talking about <a href="https://carbon.now.sh/">Carbon</a>, a free tool
 <li>there&rsquo;s syntax highlighting for all main programming languages</li>
 <li>there are various plugins and tools to speed up the process. You can direcly open a piece of code on Carbon through Atom, Sublime Text or VS Code, and you can even send it to a telegram bot!</li>
 </ul>
-<p>It&rsquo;s pretty clear that I&rsquo;m a huge fan. Of course, uploading images instead of just writing code takes up space and requires at least an extra step, but it might be worth it to give your code the attention it deserves.<br>
-Just be careful you don&rsquo;t end up wasting 15 minutes every time just to choose the <strong>right</strong> font and colors - I&rsquo;ve been there.</p>
+<p>It&rsquo;s pretty clear that I&rsquo;m a fan. Of course, it has its limitations: you can&rsquo;t copy-paste code, and uploading images takes up space, so use it responsibly.<br>
+And be careful you don&rsquo;t end up wasting 15 minutes every time just to choose the <strong>right</strong> font and colors - I&rsquo;ve been there.</p>
 <hr>
 <p>That&rsquo;s it from me. I hope you learned something new from this collection of tips, and let me know about your own tech blogging workflow!
 Carolina</p>
