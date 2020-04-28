@@ -7,7 +7,10 @@ $accent: #ec8c8c;
 $links: #3700ff;
 $mainfont: 'IA_Quattro', sans-serif;
 $bodyfont: 'Roboto', sans-serif;
-$monospace: Fira Mono, monospace; /* NAVBAR */
+$monospace: Fira Mono, monospace;
+
+
+/* NAVBAR */
 
 .navbar-nav {
   background-color: #f8f9fb;
@@ -67,9 +70,9 @@ a {
 }
 
 a:hover {
-  border-bottom: 2px solid #ec8c8c;
+  //border-bottom: 2px solid #ec8c8c;
   text-decoration: none;
-  color: black;
+  color: $links;
 }
 
 button,
@@ -220,13 +223,7 @@ ul {
   list-style: disc inside;
 }
 
-.post ul li {
-  margin-bottom: 10px;
-}
 
-.post ul li p {
-  display: inline;
-}
 
 .highlight pre {
   margin-bottom: 0;
@@ -344,6 +341,11 @@ ul {
   margin-bottom: 5vh;
 }
 
+
+/* POST */
+
+
+
 .post {
   font-family: $bodyfont;
   letter-spacing: 0.4px;
@@ -356,12 +358,24 @@ ul {
 
 .post a{
   color: $links;
+
+}
+
+.post a:hover{
+  color:  #e83e8c;
 }
 
 .post img{
   max-width: 85%;
 }
 
+.post ul li {
+  margin-bottom: 10px;
+}
+
+.post ul li p {
+  display: inline;
+}
 .post-header {
   display: flex;
 }
@@ -444,6 +458,11 @@ ul {
   margin-left: 5px;
 }
 
+
+/* FOOTER AND PAGINATION */
+
+
+
 .footer {
   text-align: right;
   font-size: 0.75em;
@@ -500,6 +519,11 @@ div.tags ul {
 .pagination .page-item.page-next {
   text-align: right;
 }
+
+
+/*MEDIA QUERIES*/
+
+
 @media (max-width: 900px) {
   .wrapper {
     padding: 25px;
