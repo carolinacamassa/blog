@@ -525,6 +525,10 @@ div.tags ul {
 
 
 @media (max-width: 900px) {
+
+  .post img{
+    max-width:95%;
+  }
   .wrapper {
     padding: 25px;
   }
