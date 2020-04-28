@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Carolina Camassa</copyright>
-    <lastBuildDate>Mon, 20 Apr 2020 20:32:02 +0530</lastBuildDate>
+    <lastBuildDate>Tue, 28 Apr 2020 13:45:02 +0530</lastBuildDate>
     
 	<atom:link href="https://carolinacamassa.tech/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tips and tricks for painless Jupyter notebook publishing</title>
+      <link>https://carolinacamassa.tech/blog/posts/blogging_with_jupyter_notebooks/</link>
+      <pubDate>Tue, 28 Apr 2020 13:45:02 +0530</pubDate>
+      
+      <guid>https://carolinacamassa.tech/blog/posts/blogging_with_jupyter_notebooks/</guid>
+      <description>After starting this blog, I&amp;rsquo;ve gotten better at quickly converting and editing Jupyter notebooks so that they&amp;rsquo;re publishing-ready. I thought I would share some of the tricks and shortcuts I use.</description>
+    </item>
     
     <item>
       <title>What makes developers satisfied with their jobs?</title>

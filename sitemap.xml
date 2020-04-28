@@ -3,22 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://carolinacamassa.tech/blog/</loc>
-    <lastmod>2020-04-20T20:32:02+05:30</lastmod>
+    <loc>https://carolinacamassa.tech/blog/tags/blogging/</loc>
+    <lastmod>2020-04-28T13:45:02+05:30</lastmod>
   </url>
   
   <url>
-    <loc>https://carolinacamassa.tech/blog/tags/data-science/</loc>
-    <lastmod>2020-04-20T20:32:02+05:30</lastmod>
+    <loc>https://carolinacamassa.tech/blog/</loc>
+    <lastmod>2020-04-28T13:45:02+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://carolinacamassa.tech/blog/posts/</loc>
-    <lastmod>2020-04-20T20:32:02+05:30</lastmod>
+    <lastmod>2020-04-28T13:45:02+05:30</lastmod>
   </url>
   
   <url>
     <loc>https://carolinacamassa.tech/blog/tags/</loc>
+    <lastmod>2020-04-28T13:45:02+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://carolinacamassa.tech/blog/posts/blogging_with_jupyter_notebooks/</loc>
+    <lastmod>2020-04-28T13:45:02+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://carolinacamassa.tech/blog/tags/data-science/</loc>
     <lastmod>2020-04-20T20:32:02+05:30</lastmod>
   </url>
   
@@ -30,11 +40,6 @@
   <url>
     <loc>https://carolinacamassa.tech/blog/posts/stack_overflow_survey_2019/</loc>
     <lastmod>2020-04-20T20:32:02+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://carolinacamassa.tech/blog/tags/blogging/</loc>
-    <lastmod>2020-03-31T22:10:02+05:30</lastmod>
   </url>
   
   <url>

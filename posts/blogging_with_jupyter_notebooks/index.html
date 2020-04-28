@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Tips and tricks for painless Jupyter notebook publishing - Carolina Camassa - - Junior Data Engineer @ Quantyca </title>
+		<meta name = "author" content = "Carolina Camassa"/><link rel="icon" type="image/png" href=https://carolinacamassa.tech/blog/icons/icon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Tips and tricks for painless Jupyter notebook publishing" />
+<meta property="og:description" content="How to remove cells and inputs during conversion, optimize plots, and publish better code snippets." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://carolinacamassa.tech/blog/posts/blogging_with_jupyter_notebooks/" />
+<meta property="og:image" content="https://carolinacamassa.tech/blog/uploads/jupyter_notebook_blog/blog_title.png" />
+<meta property="article:published_time" content="2020-04-28T13:45:02+05:30" />
+<meta property="article:modified_time" content="2020-04-28T13:45:02+05:30" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://carolinacamassa.tech/blog/uploads/jupyter_notebook_blog/blog_title.png"/>
+
+<meta name="twitter:title" content="Tips and tricks for painless Jupyter notebook publishing"/>
+<meta name="twitter:description" content="How to remove cells and inputs during conversion, optimize plots, and publish better code snippets."/>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Mono&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,500,500i&display=swap" rel="stylesheet">
+	
+	<script src="https://kit.fontawesome.com/b6729e5506.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" media="screen" href="https://carolinacamassa.tech/blog/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://carolinacamassa.tech/blog/css/main.min.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="https://carolinacamassa.tech/blog/js/main.js"></script>
+</head>
+
+<body>
+	
+<nav class="navbar sticky-top navbar-expand-lg bg-light">
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsiblenav" aria-controls="collapsiblenav" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon">
+			<i class="fas fa-bars" style="color:grey; font-size:28px;"></i>
+		</span>
+	</button>
+	<div class="collapse navbar-collapse body-text" id="collapsiblenav">
+		<div class="navbar-nav">
+			<span class="nav-item">
+				<img class="emoji" src="https://img.icons8.com/ultraviolet/40/000000/bright-moon.png">
+				<a class="nav-link" href="https://carolinacamassa.tech">
+					hello</a>
+			</span>
+			<span class="nav-item">
+			<img class = "emoji"src="https://img.icons8.com/color/48/000000/pencil-tip.png">
+			<a class="nav-link" href=https://carolinacamassa.tech/blog/>blog</a>
+			</span>
+			<span class="nav-item">
+				<img class="emoji" src="https://carolinacamassa.tech/blog/icons/linkedin.png">
+				<a class="nav-link" href="https://www.linkedin.com/in/carolinacamassa/" target="_blank">linkedin</a>
+			</span>
+			
+		</div>
+
+	</div>
+	<a class="nav navbar-nav ml-auto" href='#'>
+		<img class="star" src="https://carolinacamassa.tech/blog/icons/icon.png" style="max-height:40px;">
+	</a>
+
+</nav>
+
+	<div class=" container wrapper">
+		
+<div class="header">
+	
+	<h1 class="site-title">Carolina Camassa</h1>
+	<div class="site-description"><p>Junior Data Engineer @ Quantyca</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://www.linkedin.com/in/carolinacamassa/" title="LinkedIn"><i data-feather="linkedin"></i></a></li><li><a href="https://github.com/carolinacamassa" title="Github"><i data-feather="github"></i></a></li></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/blog/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/blog/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/blog/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header-single">
+				
+				<div class="date-long">
+						
+						<span>28 Apr 2020</span>
+				</div>
+					
+				<div class="matter">
+					<h2 class="title">Tips and tricks for painless Jupyter notebook publishing</h2>
+				</div>
+
+			</div>
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<span class = "tags"><a href="/blog/tags/blogging">blogging</a></span>
+							
+						</ul>
+					
+				
+			</div>
+
+			<div >
+				<h4>Table of Contents</h4>
+				<nav id="TableOfContents">
+  <ul>
+    <li><a href="#efficient-conversion">Efficient conversion</a>
+      <ul>
+        <li><a href="#jupyter-lab">Jupyter Lab</a></li>
+        <li><a href="#jupyter-notebook">Jupyter Notebook</a></li>
+      </ul>
+    </li>
+    <li><a href="#what-about-images">What about images?</a></li>
+    <li><a href="#front-matter">Front matter</a></li>
+    <li><a href="#bonus-sharing-pretty-code-snippets-with-carbon">Bonus: Sharing pretty code snippets with Carbon</a></li>
+  </ul>
+</nav>
+				<p>After starting this blog, I&rsquo;ve gotten better at quickly converting and editing Jupyter notebooks so that they&rsquo;re publishing-ready. I thought I would share some of the tricks and shortcuts I use.</p>
+<h3 id="efficient-conversion">Efficient conversion</h3>
+<p>One of the biggest pain points I&rsquo;ve experienced when switching from notebooks to blog posts was editing out the stuff I didn&rsquo;t want.
+Readers don&rsquo;t need to see every single line of code, so I usually converted the .ipynb file to markdown and then manually removed the code cells I didn&rsquo;t want to show. This wasn&rsquo;t ideal.</p>
+<p>Luckily, I found out that the <strong>nbconvert</strong> package allows using cell metadata to choose which cells to export during conversion. You can also filter out just the code input or just the code output.</p>
+<p>There&rsquo;s a lot of conflicting advice on how to use this feature online. I am writing this post mainly because it&rsquo;s what I hoped to find when I was trying to figure out how it worked.
+Let&rsquo;s start from the requirements.</p>
+<p>If you have conda installed, you should already have everything you need to convert your notebooks. If you don&rsquo;t, start by installing nbconvert:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pip install nbconvert
+<span style="color:#6272a4"># OR</span>
+conda install nbconvert
+</code></pre></td></tr></table>
+</div>
+</div><p>You might need to install a couple of dependencies for some specific conversions: check the <a href="https://nbconvert.readthedocs.io/en/latest/install.html">installation page</a> for more details.</p>
+<p>Now you can run  <code>jupyter nbconvert --to format file_name.ipynb </code>, from the command line where <em>format</em> can be HTML, Markdown, PDF, etc. The default is HTML.
+This short guide is meant for Markdown since it&rsquo;s what people use for personal blogs, usually, but it should work just as well for other formats if you specify it in the command line.</p>
+<p>If you want to filter out the parts of the notebook you don&rsquo;t want, you first have to edit the <strong>cell metadata</strong> of those cells. The three tags you can specify are: <em>remove_input</em>, <em>remove_cell</em> and <em>remove_output</em>. I think they&rsquo;re pretty self-explanatory. You can do it both in Jupyter Lab and Jupyter Notebook:</p>
+<h4 id="jupyter-lab">Jupyter Lab</h4>
+<p>after selecting the cell you want to edit, click on the &ldquo;Settings&rdquo; icon on the left sidebar. It will open a panel when you can add custom cell metadata. You will need to add the tags like this:
+<img src="/blog/uploads/jupyter_notebook_blog/cell_metadata.png" alt="">
+Check the parentheses and that you have the quotation marks.</p>
+<h4 id="jupyter-notebook">Jupyter Notebook</h4>
+<p>If you haven&rsquo;t already, you need to show the tags field for each cell. You can do it bly clicking on View-&gt;Cell ToolBar-&gt;Tags. Now you can add the tags like this:
+<img src="/blog/uploads/jupyter_notebook_blog/jupyter_notebook_tags.png" alt="">
+Save the notebook and you&rsquo;re ready for the next step, which is configuring the nbconvert preprocessors. If you read the <a href="https://nbconvert.readthedocs.io/en/latest/config_options.html">documentation</a>, you&rsquo;ll learn that you can specify some preprocessor settings to nbconvert when you write the conversion command.
+However, I think it&rsquo;s annoying to have to add those extra configurations every time, so I prefer to edit the default configuration instead.
+To do that, you&rsquo;ll need to type in your command line <code>jupyter nbconvert --generate-config</code>.
+This will create a file named <code>jupyter_nbconvert_config.py</code> in the <em>.jupyter/</em> folder inside your main user directory. Open the file and add these lines:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c<span style="color:#ff79c6">.</span>TagRemovePreprocessor<span style="color:#ff79c6">.</span>enabled<span style="color:#ff79c6">=</span>True
+c<span style="color:#ff79c6">.</span>TagRemovePreprocessor<span style="color:#ff79c6">.</span>remove_input_tags <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">set</span>([<span style="color:#f1fa8c">&#34;remove_input&#34;</span>])
+c<span style="color:#ff79c6">.</span>TagRemovePreprocessor<span style="color:#ff79c6">.</span>remove_cell_tags <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">set</span>([<span style="color:#f1fa8c">&#34;remove_cell&#34;</span>])
+c<span style="color:#ff79c6">.</span>TagRemovePreprocessor<span style="color:#ff79c6">.</span>remove_output_tags <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">set</span>([<span style="color:#f1fa8c">&#34;remove_output&#34;</span>])
+</code></pre></td></tr></table>
+</div>
+</div><p>Then save it and you are ready to go. Try navigating to your notebook folder and running this command:
+<img src="/blog/uploads/jupyter_notebook_blog/nbconvert.png" alt="">
+It should generate a converted Markdown file edited according to the tags you&rsquo;ve added. You can also specify an output directory and name, if you like.</p>
+<h3 id="what-about-images">What about images?</h3>
+<p>When you convert a notebook to Markdown, nbconvert creates a folder in the output directory which contains all the image files in .png format.
+From what I understand, the quality and size of the plots is dictated by your &ldquo;inline&rdquo; plot settings, and not by the ones you can configure with the <em>plt.savefig</em> method.
+What I personally do to obtain good quality images is setting these parameters for matplotlib at the beginning of the notebook:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ff79c6">%</span>config InlineBackend<span style="color:#ff79c6">.</span>figure_format<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#39;retina&#39;</span>
+mpl<span style="color:#ff79c6">.</span>rcParams[<span style="color:#f1fa8c">&#39;figure.dpi&#39;</span>] <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">80</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>You can play around with the dpi value to obtain larger or smaller resolution, because it controls the amount of dots per inch. Keep in mind that using these parameters you can end up with rather large images; I control the maximum width and height in the website&rsquo;s CSS so that I don&rsquo;t get any surprises.</p>
+<p>After the conversion, there is one icky thing left to do: move the image folder to your website static folder, and edit the link for each image so it points to the new folder. In any text editor this can be done in a couple of seconds with a simple find/replace to correct the first part of the image path, for all images at once.
+Still, I would like to find a way to eliminate this part of the process. I think the options are:</p>
+<ul>
+<li>writing a script that moves the images and fixes the paths automatically</li>
+<li>finding a way to configure a custom directory for the output files in nbconvert. For now, there&rsquo;s the option of changing the name of the directory, but not the path itself</li>
+</ul>
+<p>Let me know if you have worked out a solution to this specific issue.</p>
+<h3 id="front-matter">Front matter</h3>
+<p>If you&rsquo;re going to upload your notebook to a static website generator (read <a href="https://carolinacamassa.tech/blog/posts/static-web-blog/">this post</a> if you want to know more about this topic), you&rsquo;ll need to addsome the front matter to publish it as a blog post. Here&rsquo;s how the front matter for this post looks:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-YAML" data-lang="YAML">---
+<span style="color:#ff79c6">title</span>: Tips and tricks for painless Jupyter notebook publishing
+<span style="color:#ff79c6">date</span>: 2020-04-28T13:45:02<span style="color:#bd93f9">+05</span>:<span style="color:#bd93f9">30</span>
+<span style="color:#ff79c6">draft</span>: False
+<span style="color:#ff79c6">toc</span>: <span style="color:#ff79c6">true</span>
+<span style="color:#ff79c6">description</span>: How to remove cells and inputs during conversion, optimize plots, and publish better code snippets.
+tags:
+- blogging
+---
+</code></pre></td></tr></table>
+</div>
+</div><p>I use Hugo as a static site generator and YAML as a front matter format - other common ones are TOML and JSON.
+If I want to write the front matter direcly in Jupyter to save time, you can put it in the first cell and select the <em>Raw</em> format for the cell.</p>
+<h3 id="bonus-sharing-pretty-code-snippets-with-carbon">Bonus: Sharing pretty code snippets with Carbon</h3>
+<p>This is not direcly related to jupyter notebooks, but I still think that it will be useful to tech writers. I was certainly delighted when I found about it.
+I&rsquo;m talking about <a href="https://carbon.now.sh/">Carbon</a>, a free tool to &ldquo;create beautiful images of your source code&rdquo;, in their words. You might have seen cool-looking snippets made with Carbon on Twitter, Linkedin, or in a blog post.
+<img src="/blog/uploads/jupyter_notebook_blog/carbon_example.png" alt=""></p>
+<p>Here are some of Carbon&rsquo;s highlights:</p>
+<ul>
+<li>you can choose from a lot of different color schemes and even create your own</li>
+<li>there&rsquo;s syntax highlighting for all main programming languages</li>
+<li>there are various plugins and tools to speed up the process. You can direcly open a piece of code on Carbon through Atom, Sublime Text or VS Code, and you can even send it to a telegram bot!</li>
+</ul>
+<p>It&rsquo;s pretty clear that I&rsquo;m a huge fan. Of course, uploading images instead of just writing code takes up space and requires at least an extra step, but it might be worth it to give your code the attention it deserves.<br>
+Just be careful you don&rsquo;t end up wasting 15 minutes every time just to choose the <strong>right</strong> font and colors - I&rsquo;ve been there.</p>
+<hr>
+<p>That&rsquo;s it from me. I hope you learned something new from this collection of tips, and let me know about your own tech blogging workflow!
+Carolina</p>
+
+			</div>
+
+
+			<div class="addthis_inline_share_toolbox"></div>
+
+			<br>
+			<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "carolinac" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+			
+		</div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Carolina Camassa |  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-138928957-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e5a2f4cf30bc5d4"></script>
+<script>feather.replace()</script>
+</body>
+</html>
