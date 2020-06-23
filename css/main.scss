@@ -18,6 +18,7 @@ $monospace: 'Fira Mono', monospace;
   a:hover{
     color: $links;
   }
+  font-size: 1rem;
 }
 
 .emoji {
@@ -33,9 +34,8 @@ $monospace: 'Fira Mono', monospace;
 .nav-link {
   display: inline-block;
   color: $bodytext;
-  font-size: 1rem;
+
   line-height: normal;
-  //margin:0;
 }
 
 .nav-link:hover {
