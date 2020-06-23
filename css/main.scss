@@ -34,14 +34,7 @@ $monospace: 'Fira Mono', monospace;
 .nav-link {
   display: inline-block;
   color: $bodytext;
-
   line-height: normal;
-}
-
-.nav-link:hover {
-  color: $accent;
-  text-decoration: none;
-  border-bottom: none;
 }
 
 .nav-item {
@@ -67,7 +60,8 @@ body {
 }
 
 a {
-  color: $accent;
+  color: $links;
+
   text-decoration: none;
   word-break: break-word;
 }
@@ -75,7 +69,7 @@ a {
 a:hover {
   //border-bottom: 2px solid #ec8c8c;
   text-decoration: none;
-  color: $links;
+    color: $accent;
 }
 
 button,
@@ -374,14 +368,14 @@ ul {
   margin: 2em 0;
 }
 
-.post a{
-  color: $links;
-
-}
-
-.post a:hover{
-  color:  #e83e8c;
-}
+// .post a{
+//   color: $links;
+//
+// }
+//
+// .post a:hover{
+//   color:  #e83e8c;
+// }
 
 .post img{
   max-width: 85%;
