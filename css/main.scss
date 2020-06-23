@@ -1,13 +1,13 @@
 @import "webfonts.css";
 @import "callout.css"; /* General properties */
-$primary: #44775d;
+
 $bodytext: black;
 $bg: #ffdad5ba;
-$accent: #ec8c8c;
+$accent: #b4c0e5;
 $links: #3700ff;
-$mainfont: 'IA_Quattro', sans-serif;
+$mainfont: 'Work Sans', sans-serif;
 $bodyfont: 'Roboto', sans-serif;
-$monospace: Fira Mono, monospace;
+$monospace: 'Fira Mono', monospace;
 
 
 /* NAVBAR */
@@ -15,6 +15,9 @@ $monospace: Fira Mono, monospace;
 .navbar-nav {
   background-color: #f8f9fb;
   margin-left: 35px;
+  a:hover{
+    color: $links;
+  }
 }
 
 .emoji {
@@ -43,7 +46,7 @@ $monospace: Fira Mono, monospace;
 
 .nav-item {
   margin-right: 50px;
-  font-family: 'IA_Quattro', monospace;
+  font-family: $mainfont;
   padding-bottom: 0;
 }
 
@@ -135,7 +138,7 @@ blockquote {
   font-size: 1.2rem;
   font-family: Georgia,bitstream charter,serif;
   border-left: 3px solid;
-  border-color: $primary;
+  border-color: $accent;
   padding-left: 20px;
 }
 
@@ -351,6 +354,20 @@ ul {
   font-family: $bodyfont;
   letter-spacing: 0.4px;
   font-weight: 300;
+}
+
+
+.post-tags {
+    display: inline;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    //margin-left: 94px;
+}
+
+.post-tags li {
+    display: inline;
+    margin-right: 1em;
 }
 
 .post p {
